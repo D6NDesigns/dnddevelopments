@@ -3,7 +3,7 @@ templateKey: index-page
 title: Locally made edit
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
-subheading: CI TEST
+subheading: CI TEST 2
 mainpitch:
   title: Why D & D Developments
   description: >
