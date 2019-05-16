@@ -2,16 +2,17 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-import './all.sass'
+import '../styles/all.sass'
 import useSiteMetadata from './SiteMetadata'
 
 const TemplateWrapper = ({ children }) => {
-  const { title, description, pages } = useSiteMetadata()
+  const { title, description, pages, services} = useSiteMetadata();
+  const subTitle = services.join(', ');
   return (
     <div>
       <Helmet>
         <html lang="en-gb" />
-        <title>{title}</title>
+        <title>{title} | {subTitle}</title>
         <meta name="description" content={description} />
 
         <link

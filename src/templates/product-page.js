@@ -12,7 +12,7 @@ export const ProductPageTemplate = ({
   title,
   heading,
   description,
-  intro,
+  services,
   main,
   testimonials,
   fullImage,
@@ -50,7 +50,7 @@ export const ProductPageTemplate = ({
           </div>
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <Features gridItems={intro.blurbs} />
+              <Features gridItems={services.blurbs} />
               <div className="columns">
                 <div className="column is-7">
                   <h3 className="has-text-weight-semibold is-size-3">
@@ -109,7 +109,7 @@ ProductPageTemplate.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
   description: PropTypes.string,
-  intro: PropTypes.shape({
+  services: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
   main: PropTypes.shape({
@@ -138,7 +138,7 @@ const ProductPage = ({ data }) => {
         title={frontmatter.title}
         heading={frontmatter.heading}
         description={frontmatter.description}
-        intro={frontmatter.intro}
+        services={frontmatter.services}
         main={frontmatter.main}
         testimonials={frontmatter.testimonials}
         fullImage={frontmatter.full_image}
@@ -172,7 +172,7 @@ export const productPageQuery = graphql`
         }
         heading
         description
-        intro {
+        services {
           blurbs {
             image {
               childImageSharp {

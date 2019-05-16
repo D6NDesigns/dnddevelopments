@@ -13,7 +13,7 @@ export const IndexPageTemplate = ({
   subheading,
   mainpitch,
   description,
-  intro,
+  services,
 }) => (
   <div>
     <div
@@ -64,6 +64,7 @@ export const IndexPageTemplate = ({
         </h3>
       </div>
     </div>
+    <Features gridItems={services.blurbs} />
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
@@ -86,7 +87,6 @@ export const IndexPageTemplate = ({
                     <p>{description}</p>
                   </div>
                 </div>
-                <Features gridItems={intro.blurbs} />
                 <div className="columns">
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/products">
@@ -121,7 +121,7 @@ IndexPageTemplate.propTypes = {
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
-  intro: PropTypes.shape({
+  services: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
 }
@@ -138,7 +138,7 @@ const IndexPage = ({ data }) => {
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
-        intro={frontmatter.intro}
+        services={frontmatter.services}
       />
     </Layout>
   )
@@ -173,7 +173,7 @@ export const pageQuery = graphql`
           description
         }
         description
-        intro {
+        services {
           blurbs {
             image {
               childImageSharp {

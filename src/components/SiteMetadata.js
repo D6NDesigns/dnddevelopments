@@ -9,6 +9,7 @@ const useSiteMetadata = () => {
             title
             description
             pages
+            services
           }
         }
       }
