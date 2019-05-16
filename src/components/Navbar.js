@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import logo from '../img/logo.svg'
+import React from 'react';
+import { Link } from 'gatsby';
+import logo from '../img/logo.svg';
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -59,15 +59,13 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
+              {this.props.pages.map((page, index) => {      
+                return (
+                  <Link key={index} className="navbar-item" to={`/#${page.toLowerCase()}`}>
+                    {page}
+                  </Link>
+                ) 
+              })}
               <Link className="navbar-item" to="/contact">
                 Contact
               </Link>
@@ -82,4 +80,4 @@ const Navbar = class extends React.Component {
   }
 }
 
-export default Navbar
+export default Navbar;
