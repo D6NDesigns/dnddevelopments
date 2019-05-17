@@ -65,7 +65,7 @@ export const IndexPageTemplate = ({
       </div>
     </div>
     <Features gridItems={services.blurbs} />
-    <section className="section section--gradient">
+    <section id="services" className="section section--gradient">
       <div className="container">
         <div className="section">
           <div className="columns">
