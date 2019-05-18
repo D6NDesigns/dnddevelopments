@@ -1,9 +1,9 @@
 ---
 templateKey: index-page
-title: Locally made edit
-image: /img/home-jumbotron.jpg
+title: Welcome to D & D Developments
+image: /img/dnd-home-jumbotron.jpg
 heading: Great coffee with a conscience
-subheading: Test of editing the npm run start build
+subheading: 'Extensions, Renovations, New Builds and Lancscaping'
 mainpitch:
   title: Great coffee with a conscience
   description: kjllhjhjkkjhjh
