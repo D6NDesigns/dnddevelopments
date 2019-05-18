@@ -47,7 +47,7 @@ export const IndexPageTemplate = ({
               <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
           </div>
-          <Features gridItems={services.blurbs} siteMetadata={siteMetadata}/>
+          <Features gridItems={services.blurbs} />
         </div>
       </section>
 

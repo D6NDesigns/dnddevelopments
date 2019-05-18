@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import useSiteMetadata from '../components/SiteMetadata';
 
-const FeatureGrid = ({ gridItems, siteMetadata }) => {
-  const { services } = siteMetadata;
+const FeatureGrid = ({ gridItems }) => {
+  const { services } = useSiteMetadata();
   return (
     <div className="row text-center">
       {gridItems.map((item,index) => (
