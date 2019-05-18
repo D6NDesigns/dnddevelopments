@@ -1,9 +1,9 @@
 ---
 templateKey: index-page
-title: Locally made edit
+title: Welcome to D & D Developments
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
-subheading: We specalise in this.
+subheading: 'Extensions, Renovations, New Builds and Lancscaping'
 mainpitch:
   title: Great coffee with a conscience
   description: kjllhjhjkkjhjh
