@@ -1,19 +1,21 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import '../css/all.sass'
-import useSiteMetadata from './SiteMetadata'
+import React from 'react';
+import Helmet from 'react-helmet';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+import '../css/dnddevelopments.scss';
+import useSiteMetadata from './SiteMetadata';
 
 const TemplateWrapper = ({ children }) => {
-  const { title, description, pages, services} = useSiteMetadata();
-  const subTitle = services.join(', ');
+  const siteMetadata = useSiteMetadata();
+  const subTitle = siteMetadata.services.join(', ');
   return (
-    <div>
+    <React.Fragment>
       <Helmet>
         <html lang="en-gb" />
-        <title>{title} | {subTitle}</title>
-        <meta name="description" content={description} />
+        <title>{siteMetadata.title} | {subTitle}</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content={siteMetadata.description} />
 
         <link
           rel="apple-touch-icon"
@@ -39,16 +41,21 @@ const TemplateWrapper = ({ children }) => {
           color="#ff4400"
         />
         <meta name="theme-color" content="#fff" />
-
         <meta property="og:type" content="business.business" />
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={siteMetadata.title} />
         <meta property="og:url" content="/" />
         <meta property="og:image" content="/img/og-image.jpg" />
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' />
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css' />
+
       </Helmet>
-      <Navbar pages={pages} />
-      <div>{children}</div>
+      <Navbar siteMetadata={siteMetadata} />
+      {children}
       <Footer />
-    </div>
+    </React.Fragment>
   )
 }
 

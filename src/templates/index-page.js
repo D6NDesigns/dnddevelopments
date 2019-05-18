@@ -15,57 +15,31 @@ export const IndexPageTemplate = ({
   description,
   services,
 }) => (
-  <div>
-    <div
-      className="full-width-image margin-top-0"
+  <React.Fragment>
+    <header
+      className="masthead"
       style={{
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
+        })`
       }}
     >
-      <div
-        style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
-        }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {subheading}
-        </h3>
+      <div className="container">
+        <div className="intro-text">
+          <h1 className="intro-lead-in">
+            {title}
+          </h1>
+          <h3 className="intro-heading text-uppercase">
+            {subheading}
+          </h3>
+          <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/#services">Tell Me More</a>
+        </div>
       </div>
-    </div>
+    </header>
+
+
     <Features gridItems={services.blurbs} />
-    <section id="services" className="section section--gradient">
+    <section id="services" className="page-section">
       <div className="container">
         <div className="section">
           <div className="columns">
@@ -111,7 +85,8 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
-  </div>
+
+  </React.Fragment>
 )
 
 IndexPageTemplate.propTypes = {
