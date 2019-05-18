@@ -53,7 +53,6 @@ const Navbar = class extends React.Component {
               aria-controls="navbarResponsive" 
               aria-expanded="false" 
               aria-label="Toggle navigation">
-              Menu 
               <i className="fas fa-bars"></i>
             </button>
             <div className="collapse navbar-collapse" id="navbarResponsive">

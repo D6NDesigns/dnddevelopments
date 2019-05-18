@@ -2,13 +2,14 @@
 .dnd-nav {
   background-color: transparent;
   &.navbar-dark .navbar-toggler {
-    font-size: 12px;
+    font-size: 20px;
+    font-weight: 300;
     right: 0;
-    padding: 13px;
+    padding: 10px;
     text-transform: uppercase;
     color: white;
     border: 0;
-    background-color: $primary !important;
+    background-color: transparent !important;
     @include heading-font;
   }
   
