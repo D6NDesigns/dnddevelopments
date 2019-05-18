@@ -7,7 +7,7 @@ const FeatureGrid = ({ gridItems }) => {
   return (
     <div className="row text-center">
       {gridItems.map((item,index) => (
-        <div key={index} className="col-md-3">
+        <div key={index} className="col-md-6 col-lg-3">
           <span className="fa-stack fa-4x">
             <i className="fas fa-circle fa-stack-2x text-primary"></i>
             <i className="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
