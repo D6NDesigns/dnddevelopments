@@ -1,16 +1,17 @@
 // Styling for the navbar
 .dnd-nav {
-  background-color: $dnd-grey;
-  .navbar-toggler {
+  background-color: transparent;
+  &.navbar-dark .navbar-toggler {
     font-size: 12px;
     right: 0;
     padding: 13px;
     text-transform: uppercase;
     color: white;
     border: 0;
-    background-color: $primary;
+    background-color: $primary !important;
     @include heading-font;
   }
+  
   .navbar-brand {
     color: $primary;
     &.active,
@@ -20,7 +21,7 @@
       color: darken($primary, 10%);
     }
     img {
-      width: 7em;
+      height: 3em;
     }
   }
   .navbar-nav {
@@ -72,4 +73,18 @@
     }
   }
 
+}
+
+.dnd-nav-background {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  display: block;
+  height: 86px;
+  width: 100vw;
+  background-color: $dnd-grey;
+
+  @media(min-width: 768px) {
+    height: 110px;
+  }
 }

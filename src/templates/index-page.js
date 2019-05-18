@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
-
-import Layout from '../components/Layout'
-import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import Features from '../components/Features';
+import BlogRoll from '../components/BlogRoll';
+import useSiteMetadata from '../components/SiteMetadata';
 
 export const IndexPageTemplate = ({
   image,
@@ -14,34 +14,51 @@ export const IndexPageTemplate = ({
   mainpitch,
   description,
   services,
-}) => (
-  <React.Fragment>
-    <header
-      className="dnd-intro dnd-branding"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`
-      }}
-    >
-      <div className="container">
-        <div className="intro-text">
-          <h1 className="intro-lead-in">
-            {title}
-          </h1>
-          <h3 className="intro-heading text-uppercase">
-            {subheading}
-          </h3>
-          <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/#services">Tell Me More</a>
+}) => {
+  const siteMetadata = useSiteMetadata();
+  return (
+    <React.Fragment>
+      <header
+        className="dnd-intro dnd-branding"
+        style={{
+          backgroundImage: `url(${
+            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+          })`
+        }}
+      >
+        <div className="container">
+          <div className="intro-text">
+            <h1 className="intro-lead-in">
+              {title}
+            </h1>
+            <h3 className="intro-heading text-uppercase">
+              {subheading}
+            </h3>
+            <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/#services">Tell Me More</a>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
 
+      <section id="services" className="dnd-services dnd-branding dnd-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 text-center">
+              <h2 className="section-heading text-uppercase">{siteMetadata.pages[0]}</h2>
+              <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+          </div>
+          <Features gridItems={services.blurbs} siteMetadata={siteMetadata}/>
+        </div>
+      </section>
 
-    <Features gridItems={services.blurbs} />
-    <section id="services" className="page-section">
-      <div className="container">
-        <div className="section">
+      <section id="portfolio" className="dnd-portfolio dnd-branding dnd-section bg-light">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 text-center">
+              <h2 className="section-heading text-uppercase">{siteMetadata.pages[1]}</h2>
+              <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+          </div>
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
@@ -83,11 +100,11 @@ export const IndexPageTemplate = ({
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-  </React.Fragment>
-)
+    </React.Fragment>
+  )
+}
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -102,8 +119,7 @@ IndexPageTemplate.propTypes = {
 }
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
-
+  const { frontmatter } = data.markdownRemark;
   return (
     <Layout>
       <IndexPageTemplate
@@ -117,7 +133,7 @@ const IndexPage = ({ data }) => {
       />
     </Layout>
   )
-}
+};
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
@@ -127,7 +143,7 @@ IndexPage.propTypes = {
   }),
 }
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
@@ -165,4 +181,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

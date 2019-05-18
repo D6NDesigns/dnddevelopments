@@ -1,28 +1,23 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const FeatureGrid = ({ gridItems }) => (
-  <div className="columns is-multiline">
-    {gridItems.map(item => (
-      <div key={item.text} className="column is-3">
-        <section className="section">
-          <div className="has-text-centered">
-            <div
-              style={{
-                width: '240px',
-                display: 'inline-block',
-              }}
-            >
-              <PreviewCompatibleImage imageInfo={item} />
-            </div>
-          </div>
-          <p>{item.text}</p>
-        </section>
-      </div>
-    ))}
-  </div>
-)
+const FeatureGrid = ({ gridItems, siteMetadata }) => {
+  const { services } = siteMetadata;
+  return (
+    <div className="row text-center">
+      {gridItems.map((item,index) => (
+        <div key={index} className="col-md-3">
+          <span className="fa-stack fa-4x">
+            <i className="fas fa-circle fa-stack-2x text-primary"></i>
+            <i className="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 className="dnd-service-heading">{services[index]}</h4>
+          <p className="text-muted">{item.text}</p>
+        </div>
+      ))}
+    </div>
+  )
+};
 
 FeatureGrid.propTypes = {
   gridItems: PropTypes.arrayOf(
@@ -31,6 +26,7 @@ FeatureGrid.propTypes = {
       text: PropTypes.string,
     })
   ),
+  siteMetadata: PropTypes.object
 }
 
-export default FeatureGrid
+export default FeatureGrid;

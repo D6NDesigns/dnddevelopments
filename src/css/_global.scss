@@ -18,7 +18,7 @@ body {
   }
 
   .text-primary {
-    color: $primary;
+    color: $primary !important;
   }
 
   h1,
@@ -31,7 +31,7 @@ body {
     @include heading-font;
   }
 
-  .page-section {
+  &.dnd-section {
     padding: 100px 0;
     h2.section-heading {
       font-size: 40px;
@@ -46,9 +46,8 @@ body {
       text-transform: none;
       @include serif-font;
     }
-  }
-  @media(min-width:768px) {
-    section {
+
+    @media(min-width:768px) {
       padding: 150px 0;
     }
   }
