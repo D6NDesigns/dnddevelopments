@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: Midlands based construction specalising in
+title: We are Midlands based construction specialists in
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
 subheading: 'Extensions, Renovations, New Builds and Lancscaping'
