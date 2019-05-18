@@ -3,7 +3,7 @@ templateKey: index-page
 title: Locally made edit
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
-subheading: Test of editing the npm run start build
+subheading: We specalise in this.
 mainpitch:
   title: Great coffee with a conscience
   description: kjllhjhjkkjhjh
