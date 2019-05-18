@@ -1,9 +1,4 @@
-// D & D Developments CSS
-
-//  Bootstrap core CSS
-@import "vendor/bootstrap/css/bootstrap.min.css";
-// Font Awesome Icons
-@import "vendor/fontawesome-free/css/all.min.css";
+// D & D Developments Styles
 // Core variables and mixins
 @import "variables.scss";
 @import "mixins.scss";
@@ -11,7 +6,7 @@
 @import "global.scss";
 // Components
 @import "navbar.scss";
-@import "masthead.scss";
+@import "intro.scss";
 @import "services.scss";
 @import "portfolio.scss";
 @import "timeline.scss";

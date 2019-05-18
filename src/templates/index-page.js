@@ -17,7 +17,7 @@ export const IndexPageTemplate = ({
 }) => (
   <React.Fragment>
     <header
-      className="masthead"
+      className="dnd-intro dnd-branding"
       style={{
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image

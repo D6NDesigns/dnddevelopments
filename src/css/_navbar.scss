@@ -13,7 +13,6 @@
   }
   .navbar-brand {
     color: $primary;
-    @include script-font;
     &.active,
     &:active,
     &:focus,
@@ -58,14 +57,14 @@
     .navbar-nav {
       .nav-item {
         .nav-link {
-          padding: 1.1em 1em !important;
+          padding: 1.1em 1em;
         }
       }
     }
     &.navbar-shrink {
       padding-top: 0;
       padding-bottom: 0;
-      background-color: $gray-900;
+      background-color:$dnd-grey;
       .navbar-brand {
         font-size: 1.25em;
         padding: 12px 0;

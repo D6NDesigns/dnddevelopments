@@ -34,7 +34,7 @@ const Navbar = class extends React.Component {
   render() {
     const siteMetadata = this.props.siteMetadata;
     return (
-      <nav className="dnd-nav navbar navbar-expand-lg navbar-dark fixed-top">
+      <nav className="dnd-nav dnd-branding navbar navbar-expand-lg navbar-dark fixed-top">
         <div className="container">
           <a className="navbar-brand js-scroll-trigger" href="#page-top">
           <img
@@ -59,7 +59,7 @@ const Navbar = class extends React.Component {
             {siteMetadata.pages.map((page, index) => {      
               return (
                 <li key={index} className="nav-item">
-                  <Link className="navbar-link" to={`/#${page.toLowerCase()}`}>
+                  <Link className="nav-link" to={`/#${page.toLowerCase()}`}>
                     {page}
                   </Link>
                 </li>
