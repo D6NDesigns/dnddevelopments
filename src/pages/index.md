@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
-title: Welcome to D & D Developments
-image: /img/dnd-home-jumbotron.jpg
+title: Midlands based construction specalising in
+image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
 subheading: 'Extensions, Renovations, New Builds and Lancscaping'
 mainpitch:
