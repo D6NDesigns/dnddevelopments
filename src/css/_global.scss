@@ -60,7 +60,11 @@ body {
 
   .btn-xl {
     font-size: 18px;
-    padding: 20px 40px;
+    padding: 10px 20px;
+
+    @media (min-width: 768px) {
+      padding: 20px 40px;
+    }
   }
 
   .btn-primary {

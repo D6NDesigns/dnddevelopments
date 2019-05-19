@@ -38,7 +38,7 @@ const Navbar = class extends React.Component {
         <div className="dnd-nav-background"></div>
         <nav className="dnd-nav dnd-branding navbar navbar-expand-lg navbar-dark fixed-top">
           <div className="container">
-            <a className="navbar-brand js-scroll-trigger" href="#page-top">
+            <a className="navbar-brand js-scroll-trigger" href="#intro">
             <img
               src={logo}
               alt={siteMetadata.title}

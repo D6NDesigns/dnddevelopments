@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Features from '../components/Features';
+import ServicesGrid from '../components/ServicesGrid';
 import BlogRoll from '../components/BlogRoll';
 import useSiteMetadata from '../components/SiteMetadata';
 
@@ -19,6 +19,7 @@ export const IndexPageTemplate = ({
   return (
     <React.Fragment>
       <header
+        id="intro"
         className="dnd-intro dnd-branding"
         style={{
           backgroundImage: `url(${
@@ -47,7 +48,7 @@ export const IndexPageTemplate = ({
               <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
           </div>
-          <Features gridItems={services.blurbs} />
+          <ServicesGrid gridItems={services.blurbs} />
         </div>
       </section>
 

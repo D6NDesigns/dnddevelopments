@@ -5,6 +5,7 @@ module.exports = {
     title: 'D & D Developments',
     description:
       'Midlands based...',
+    theme: '#E8B90E',
     pages: [
       'Services',
       'Portfolio',
