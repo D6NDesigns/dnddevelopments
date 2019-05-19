@@ -14,9 +14,6 @@ const TemplateWrapper = ({ children }) => {
         <html lang="en-gb" />
         <title>{siteMetadata.title} | {subTitle}</title>
         <meta name="description" content={siteMetadata.description} />
-        <meta name="theme-color" content={siteMetadata.theme} />
-        <meta name="msapplication-navbutton-color" content={siteMetadata.title} />
-        <meta name="apple-mobile-web-app-status-bar-style" content={siteMetadata.title} />
 
         <link
           rel="apple-touch-icon"
@@ -41,7 +38,10 @@ const TemplateWrapper = ({ children }) => {
           href="/img/safari-pinned-tab.svg"
           color="#ff4400"
         />
-        <meta name="theme-color" content="#fff" />
+        <meta name="theme-color" content={siteMetadata.theme} />
+        <meta name="msapplication-navbutton-color" content={siteMetadata.theme} />
+        <meta name="apple-mobile-web-app-status-bar-style" content={siteMetadata.theme} />
+
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={siteMetadata.title} />
         <meta property="og:url" content="/" />

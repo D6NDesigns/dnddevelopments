@@ -33,6 +33,11 @@ body {
 
   &.dnd-section {
     padding: 100px 0;
+
+    &:nth-child(odd) {
+      background-color: #f8f9fa;
+    }
+
     h2.section-heading {
       font-size: 40px;
       margin-top: 0;
