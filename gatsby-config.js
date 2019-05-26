@@ -17,6 +17,27 @@ module.exports = {
       'Renovations',
       'New Builds',
       'Landscaping'
+    ],
+    jobs: [
+      {
+        title: 'Aston On Trent',
+        services: 'Extensions, Landscaping'
+      },{
+        title: 'Lutterworth',
+        services: 'Extensions, Landscaping'
+      },{
+        title: 'Leicester',
+        services: 'Landscaping'
+      },{
+        title: 'Buxton',
+        services: 'Extensions'
+      },{
+        title: 'Mapperely Top',
+        services: 'Extensions, Renovations, Landscaping'
+      },{
+        title: 'Spondon',
+        services: 'Extensions'
+      }
     ]
   },
   plugins: [
