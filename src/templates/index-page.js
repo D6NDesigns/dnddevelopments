@@ -29,7 +29,7 @@ export const IndexPageTemplate = ({
         <ServicesGrid gridItems={services.blurbs} />
       </Section>
       <Section title={siteMetadata.pages[1]}>
-        <PortfolioGrid gridItems={siteMetadata.jobs} />
+        <PortfolioGrid jobs={siteMetadata.jobs} />
       </Section>
       <Section title={siteMetadata.pages[2]}>
         About content to follow...

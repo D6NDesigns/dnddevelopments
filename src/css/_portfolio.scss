@@ -1,8 +1,12 @@
 // Styling for the portfolio section
-#portfolio {
+.dnd-portfolio {
   .portfolio-item {
     right: 0;
     margin: 0 0 15px;
+    @media(min-width:767px) {
+      margin: 0 0 30px;
+    }
+
     .portfolio-link {
       position: relative;
       display: block;
@@ -30,8 +34,9 @@
           margin-top: -12px;
           text-align: center;
           color: white;
-          i {
+          img {
             margin-top: -12px;
+            height: 60px;
           }
           h3,
           h4 {
@@ -60,13 +65,6 @@
   }
   * {
     z-index: 2;
-  }
-}
-@media(min-width:767px) {
-  #portfolio {
-    .portfolio-item {
-      margin: 0 0 30px;
-    }
   }
 }
 

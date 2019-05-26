@@ -32,7 +32,7 @@ module.exports = {
         title: 'Buxton',
         services: 'Extensions'
       },{
-        title: 'Mapperely Top',
+        title: 'Mapperley Top',
         services: 'Extensions, Renovations, Landscaping'
       },{
         title: 'Spondon',
