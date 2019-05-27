@@ -30,7 +30,7 @@ export const IndexPageTemplate = ({
       <Section title={siteMetadata.pages[0]} description={services.description}>
         <Services services={services.blurbs} />
       </Section>
-      <Section title={siteMetadata.pages[1]} description={'Previous work by D&D, click for more info'}>
+      <Section title={siteMetadata.pages[1]} description={'Previous work by D&D, click a job for more info'}>
         <Portfolio jobs={siteMetadata.jobs} />
       </Section>
       <Section title={siteMetadata.pages[2]} description={'About D&D'}>

@@ -23,7 +23,7 @@ const Navbar = class extends React.Component {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: 'is-active',
+              navBarActiveClass: 'show',
             })
           : this.setState({
               navBarActiveClass: '',
@@ -37,9 +37,9 @@ const Navbar = class extends React.Component {
     return (
       <React.Fragment>
         <div className="dnd-nav-background"></div>
-        <nav className="dnd-nav dnd-branding navbar navbar-expand-lg navbar-dark fixed-top">
+        <nav className={`dnd-nav ${this.state.active ? 'dnd-nav-is-showing' : ''} dnd-branding navbar navbar-expand-lg navbar-dark fixed-top`}>
           <div className="container">
-            <a className="navbar-brand js-scroll-trigger" href="#intro">
+            <a className="navbar-brand" href="#intro">
             <img
               src={logo}
               alt={siteMetadata.title}
@@ -47,24 +47,30 @@ const Navbar = class extends React.Component {
             />
             </a>
             <button 
-              className="navbar-toggler navbar-toggler-right" 
+              className={`navbar-toggler navbar-toggler-right ${this.state.active ? '' : 'collapsed'}`}
               type="button" 
               data-toggle="collapse" 
               data-target="#navbarResponsive" 
               aria-controls="navbarResponsive" 
               aria-expanded="false" 
-              aria-label="Toggle navigation">
+              aria-label="Toggle navigation"
+              onClick={() => this.toggleHamburger()}
+            >
               <img 
                 src={navbarIcon}
                 alt=''
               />
             </button>
-            <div className="collapse navbar-collapse" id="navbarResponsive">
+            <div className={`collapse navbar-collapse ${this.state.navBarActiveClass}`} id="navbarResponsive">
               <ul className="navbar-nav text-uppercase ml-auto">
               {siteMetadata.pages.map((page, index) => {      
                 return (
                   <li key={index} className="nav-item">
-                    <Link className="nav-link" to={`/#${page.toLowerCase()}`}>
+                    <Link 
+                      className="nav-link" 
+                      to={`/#${page.toLowerCase()}`}
+                      onClick={() => this.toggleHamburger()}
+                    >
                       {page}
                     </Link>
                   </li>

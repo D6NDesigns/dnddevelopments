@@ -1,6 +1,11 @@
 // Styling for the navbar
 .dnd-nav {
   background-color: transparent;
+
+  &.dnd-nav-is-showing {
+    background-color: $dnd-grey;
+  }
+  
   &.navbar-dark .navbar-toggler {
     font-size: 20px;
     font-weight: 300;
