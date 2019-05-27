@@ -5,7 +5,7 @@
   &.dnd-nav-is-showing {
     background-color: $dnd-grey;
   }
-  
+
   &.navbar-dark .navbar-toggler {
     font-size: 20px;
     font-weight: 300;
@@ -16,6 +16,12 @@
     border: 0;
     background-color: transparent !important;
     @include heading-font;
+
+    &:focus {
+      &, img {
+        outline: 0;
+      }
+    }
 
     img {
       width: 40px;
