@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import plusIcon from '../img/icons/plus-icon.svg';
+import plusIcon from '../../img/icons/plus-icon.svg';
 
-const PortfolioGrid = ({ jobs }) => {
+const Portfolio = ({ jobs }) => {
   return (
     <div className="row">
       {jobs.map((job,index) => (
@@ -29,7 +29,7 @@ const PortfolioGrid = ({ jobs }) => {
   )
 };
 
-PortfolioGrid.propTypes = {
+Portfolio.propTypes = {
   jobs: PropTypes.arrayOf(
     PropTypes.shape({
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -40,4 +40,4 @@ PortfolioGrid.propTypes = {
   siteMetadata: PropTypes.object
 }
 
-export default PortfolioGrid;
+export default Portfolio;

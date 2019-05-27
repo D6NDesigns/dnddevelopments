@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import ServicesGrid from '../components/ServicesGrid';
-import PortfolioGrid from '../components/PortfolioGrid';
+import Services from '../components/sections/Services';
+import Portfolio from '../components/sections/Portfolio';
 import useSiteMetadata from '../components/SiteMetadata';
 import Intro from '../components/Intro';
 import Section from '../components/Section';
@@ -26,10 +26,10 @@ export const IndexPageTemplate = ({
         image={image} 
       />
       <Section title={siteMetadata.pages[0]}>
-        <ServicesGrid gridItems={services.blurbs} />
+        <Services services={services.blurbs} />
       </Section>
       <Section title={siteMetadata.pages[1]}>
-        <PortfolioGrid jobs={siteMetadata.jobs} />
+        <Portfolio jobs={siteMetadata.jobs} />
       </Section>
       <Section title={siteMetadata.pages[2]}>
         About content to follow...
