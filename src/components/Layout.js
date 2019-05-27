@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import '../css/dnddevelopments.scss';
 import useSiteMetadata from './SiteMetadata';
@@ -55,7 +55,7 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Navbar siteMetadata={siteMetadata} />
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   )
 }

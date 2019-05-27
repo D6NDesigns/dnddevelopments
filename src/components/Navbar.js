@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import logo from '../img/logo.svg';
+import navbarIcon from '../img/icons/navbar-icon.svg';
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -53,7 +54,10 @@ const Navbar = class extends React.Component {
               aria-controls="navbarResponsive" 
               aria-expanded="false" 
               aria-label="Toggle navigation">
-              <i className="fas fa-bars"></i>
+              <img 
+                src={navbarIcon}
+                alt=''
+              />
             </button>
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav text-uppercase ml-auto">

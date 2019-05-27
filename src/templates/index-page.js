@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
+import Intro from '../components/sections/Intro';
 import Services from '../components/sections/Services';
 import Portfolio from '../components/sections/Portfolio';
+import About from '../components/sections/About';
 import useSiteMetadata from '../components/SiteMetadata';
-import Intro from '../components/Intro';
 import Section from '../components/Section';
 
 export const IndexPageTemplate = ({
@@ -21,18 +22,19 @@ export const IndexPageTemplate = ({
   return (
     <React.Fragment>
       <Intro 
-        title={title} 
+        title={title}
+        heading={heading} 
         subheading={subheading} 
         image={image} 
       />
-      <Section title={siteMetadata.pages[0]}>
+      <Section title={siteMetadata.pages[0]} description={services.description}>
         <Services services={services.blurbs} />
       </Section>
-      <Section title={siteMetadata.pages[1]}>
+      <Section title={siteMetadata.pages[1]} description={'Previous work by D&D, click for more info'}>
         <Portfolio jobs={siteMetadata.jobs} />
       </Section>
-      <Section title={siteMetadata.pages[2]}>
-        About content to follow...
+      <Section title={siteMetadata.pages[2]} description={'About D&D'}>
+        <About about={siteMetadata.about} />
       </Section>
     </React.Fragment>
   )
@@ -42,7 +44,6 @@ IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
-  subheading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   services: PropTypes.shape({
@@ -105,6 +106,7 @@ export const pageQuery = graphql`
                 }
               }
             }
+            title
             text
           }
           heading

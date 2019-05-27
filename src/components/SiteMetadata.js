@@ -14,6 +14,10 @@ const useSiteMetadata = () => {
               title
               services
             }
+            about {
+              name
+              info
+            }
           }
         }
       }

@@ -2,8 +2,8 @@
 templateKey: index-page
 title: We are Midlands based construction specialists in
 image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
-subheading: 'Extensions, Renovations, New Builds and Landscaping'
+heading: 'Extensions, Renovations, New Builds and Landscaping'
+subheading: Tell Me More
 mainpitch:
   title: Great coffee with a conscience
   description: kjllhjhjkkjhjh
@@ -13,14 +13,18 @@ description: >-
   roasting and brewing seriously and we’re glad to pass that knowledge to
   anyone.
 services:
+  description: >
+    The Services D&D Provide
   blurbs:
     - image: /img/coffee.png
+      title: Extensions
       text: >
         In facilisis hendrerit nisi sit amet eleifend. Etiam pellentesque
         ultrices erat vel auctor. In in orci at elit mattis faucibus. Aliquam
         pellentesque eget dui sed sodales. Etiam aliquet sit amet nunc nec
         ultrices. Quisque quis blandit tellus, nec euismod ligula.
     - image: /img/coffee-gear.png
+      title: Renovations
       text: >-
         Pellentesque habitant morbi tristique senectus et netus et malesuada
         fames ac turpis egestas. Quisque hendrerit enim eu rutrum blandit.
@@ -28,19 +32,16 @@ services:
         porta leo. In eleifend nunc vitae ligula congue, at vestibulum turpis
         dapibus. 
     - image: /img/tutorials.png
+      title: New Builds
       text: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet dolor sapien, quis maximus arcu scelerisque id. Nunc rhoncus efficitur libero a auctor. Vestibulum lacinia massa vel sem ornare, eu eleifend metus congue. Donec turpis turpis, efficitur scelerisque orci venenatis, facilisis fermentum augue.'
     - image: /img/meeting-space.png
+      title: Landscaping
       text: >
         Morbi rutrum eros ut felis cursus, quis ultrices lorem posuere.
         Suspendisse placerat posuere feugiat. Aenean ultricies faucibus dolor,
         et cursus nibh euismod vitae. Sed vitae accumsan odio, cursus commodo
         velit. Nunc at iaculis nulla.
   heading: What we offer
-  description: >
-    Kaldi is the ultimate spot for coffee lovers who want to learn about their
-    java’s origin and support the farmers that grew it. We take coffee
-    production, roasting and brewing seriously and we’re glad to pass that
-    knowledge to anyone. This is an edit via identity...
 main:
   heading: Great coffee with no compromises
   description: >

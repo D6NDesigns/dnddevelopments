@@ -2,7 +2,7 @@ import React from 'react';
 
 const Intro = class extends React.Component {
   render() {
-    const {title, subheading, image } = this.props;
+    const {title, heading, subheading, image } = this.props;
     return (
       <header
         id="intro"
@@ -19,9 +19,9 @@ const Intro = class extends React.Component {
               {title}
             </h1>
             <h3 className="intro-heading text-uppercase">
-              {subheading}
+              {heading}
             </h3>
-            <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/#services">Tell Me More</a>
+            <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/#services">{subheading}</a>
           </div>
         </div>
       </header>
