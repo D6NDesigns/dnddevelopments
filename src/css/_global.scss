@@ -64,10 +64,10 @@ body {
   }
 
   .btn-xl {
-    font-size: 18px;
     padding: 10px 20px;
 
     @media (min-width: 768px) {
+      font-size: 18px;
       padding: 20px 40px;
     }
   }
