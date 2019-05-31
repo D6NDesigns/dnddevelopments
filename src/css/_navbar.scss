@@ -4,9 +4,17 @@
 
   &.dnd-nav-is-showing {
     background-color: $dnd-grey;
+
+    .navbar-toggler img {
+      width: 27px;
+      height: 27px;
+      transform: rotate(45deg);
+    }
   }
 
-  &.navbar-dark .navbar-toggler {
+  .navbar-toggler {
+    width: 40px;
+    height: 40px;
     font-size: 20px;
     font-weight: 300;
     right: 0;

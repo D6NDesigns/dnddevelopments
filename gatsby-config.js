@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'D & D Developments',
     description:
-      'Midlands based...',
+      'Midlands Extensions, Renovations, New Builds and Landscaping',
     theme: '#E8B90E',
     pages: [
       'Services',

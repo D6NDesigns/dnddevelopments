@@ -7,12 +7,11 @@ import useSiteMetadata from './SiteMetadata';
 
 const TemplateWrapper = ({ children }) => {
   const siteMetadata = useSiteMetadata();
-  const subTitle = siteMetadata.services.join(', ');
   return (
     <React.Fragment>
       <Helmet>
         <html lang="en-gb" />
-        <title>{siteMetadata.title} | {subTitle}</title>
+        <title>{siteMetadata.title} | {siteMetadata.description}</title>
         <meta name="description" content={siteMetadata.description} />
 
         <link

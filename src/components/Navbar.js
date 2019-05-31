@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import logo from '../img/logo.svg';
-import navbarIcon from '../img/icons/navbar-icon.svg';
+import navbarOpenIcon from '../img/icons/navbar-icon.svg';
+import navbarCloseIcon from '../img/icons/plus-icon.svg';
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -57,7 +58,7 @@ const Navbar = class extends React.Component {
               onClick={() => this.toggleHamburger()}
             >
               <img 
-                src={navbarIcon}
+                src={this.state.active ? navbarCloseIcon : navbarOpenIcon}
                 alt=''
               />
             </button>
