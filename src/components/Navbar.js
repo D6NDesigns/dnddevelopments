@@ -14,7 +14,7 @@ const Navbar = class extends React.Component {
     }
   }
 
-  toggleHamburger = () => {
+  handleNav = () => {
     // toggle the active boolean in the state
     this.setState(
       {
@@ -56,7 +56,7 @@ const Navbar = class extends React.Component {
               aria-controls="navbarResponsive" 
               aria-expanded="false" 
               aria-label="Toggle navigation"
-              onClick={() => this.toggleHamburger()}
+              onClick={() => this.handleNav()}
             >
               <img 
                 src={this.state.active ? navbarCloseIcon : navbarOpenIcon}
@@ -75,7 +75,7 @@ const Navbar = class extends React.Component {
                     <Link 
                       className="nav-link" 
                       to={`/#${page.toLowerCase()}`}
-                      onClick={() => this.toggleHamburger()}
+                      onClick={() => this.handleNav()}
                     >
                       {page}
                     </Link>
