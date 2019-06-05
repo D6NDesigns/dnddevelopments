@@ -3,7 +3,9 @@
   background-color: transparent;
 
   &.dnd-nav-is-showing {
-    background-color: $dnd-grey;
+    @media (max-width: 992px) {
+      background-color: $dnd-grey;
+    }
 
     .navbar-toggler img {
       width: 27px;
@@ -58,8 +60,10 @@
         letter-spacing: 1px;
         color: white;
         @include heading-font;
-        &.active,
-        &:hover {
+      }
+      &.dnd-nav-item-is-active,
+      &:hover {
+        a {
           color: $primary;
         }
       }

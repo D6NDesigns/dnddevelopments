@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import logo from '../img/logo.svg';
 import navbarOpenIcon from '../img/icons/navbar-icon.svg';
 import navbarCloseIcon from '../img/icons/plus-icon.svg';
+import Scrollspy from 'react-scrollspy';
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -63,7 +64,11 @@ const Navbar = class extends React.Component {
               />
             </button>
             <div className={`collapse navbar-collapse ${this.state.navBarActiveClass}`} id="navbarResponsive">
-              <ul className="navbar-nav text-uppercase ml-auto">
+              <Scrollspy 
+                className="navbar-nav text-uppercase ml-auto" 
+                items={ ['services', 'portfolio', 'about'] } 
+                currentClassName="dnd-nav-item-is-active"
+              >
               {siteMetadata.pages.map((page, index) => {      
                 return (
                   <li key={index} className="nav-item">
@@ -77,7 +82,7 @@ const Navbar = class extends React.Component {
                   </li>
                 ) 
               })}
-              </ul>
+              </Scrollspy>
             </div>
           </div>
         </nav>
