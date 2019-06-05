@@ -16,26 +16,22 @@ services:
   description: >
     The Services D&D Provide
   blurbs:
-    - image: /img/coffee.png
-      title: Extensions
+    - title: Extensions
       text: >
         In facilisis hendrerit nisi sit amet eleifend. Etiam pellentesque
         ultrices erat vel auctor. In in orci at elit mattis faucibus. Aliquam
         pellentesque eget dui sed sodales. Etiam aliquet sit amet nunc nec
         ultrices. Quisque quis blandit tellus, nec euismod ligula.
-    - image: /img/coffee-gear.png
-      title: Renovations
+    - title: Renovations
       text: >-
         Pellentesque habitant morbi tristique senectus et netus et malesuada
         fames ac turpis egestas. Quisque hendrerit enim eu rutrum blandit.
         Aliquam erat volutpat. Nulla nibh enim, sodales eu purus quis, tempus
         porta leo. In eleifend nunc vitae ligula congue, at vestibulum turpis
         dapibus. 
-    - image: /img/tutorials.png
-      title: New Builds
+    - title: New Builds
       text: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet dolor sapien, quis maximus arcu scelerisque id. Nunc rhoncus efficitur libero a auctor. Vestibulum lacinia massa vel sem ornare, eu eleifend metus congue. Donec turpis turpis, efficitur scelerisque orci venenatis, facilisis fermentum augue.'
-    - image: /img/meeting-space.png
-      title: Landscaping
+    - title: Landscaping
       text: >
         Morbi rutrum eros ut felis cursus, quis ultrices lorem posuere.
         Suspendisse placerat posuere feugiat. Aenean ultricies faucibus dolor,

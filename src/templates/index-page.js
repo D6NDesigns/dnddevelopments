@@ -99,13 +99,6 @@ export const pageQuery = graphql`
         description
         services {
           blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
             title
             text
           }

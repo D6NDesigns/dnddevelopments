@@ -66,7 +66,7 @@ const Navbar = class extends React.Component {
             <div className={`collapse navbar-collapse ${this.state.navBarActiveClass}`} id="navbarResponsive">
               <Scrollspy 
                 className="navbar-nav text-uppercase ml-auto" 
-                items={ ['services', 'portfolio', 'about'] } 
+                items={ ['services', 'portfolio', 'about','contact'] } 
                 currentClassName="dnd-nav-item-is-active"
               >
               {siteMetadata.pages.map((page, index) => {      
