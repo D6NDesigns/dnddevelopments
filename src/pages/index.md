@@ -13,33 +13,38 @@ description: >-
   roasting and brewing seriously and we’re glad to pass that knowledge to
   anyone.
 services:
-  description: >
-    The Services D&D Provide
   blurbs:
-    - title: Extensions
-      text: >
-        In facilisis hendrerit nisi sit amet eleifend. Etiam pellentesque
-        ultrices erat vel auctor. In in orci at elit mattis faucibus. Aliquam
-        pellentesque eget dui sed sodales. Etiam aliquet sit amet nunc nec
-        ultrices. Quisque quis blandit tellus, nec euismod ligula.
-    - title: Renovations
-      text: >-
+    - text: >
+        Adding a house extension to your home is a very good idea and straight
+        forward. If you have not yet extended your house to the back or side,
+        why not go ahead, it will certainly give you more space to move around
+        your home, will most probably double the kitchen or living room and also
+        increase the total value of your property, should you sell or let in the
+        future.
+    - text: >-
         Pellentesque habitant morbi tristique senectus et netus et malesuada
         fames ac turpis egestas. Quisque hendrerit enim eu rutrum blandit.
         Aliquam erat volutpat. Nulla nibh enim, sodales eu purus quis, tempus
         porta leo. In eleifend nunc vitae ligula congue, at vestibulum turpis
         dapibus. 
-    - title: New Builds
-      text: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet dolor sapien, quis maximus arcu scelerisque id. Nunc rhoncus efficitur libero a auctor. Vestibulum lacinia massa vel sem ornare, eu eleifend metus congue. Donec turpis turpis, efficitur scelerisque orci venenatis, facilisis fermentum augue.'
-    - title: Landscaping
-      text: >
-        Morbi rutrum eros ut felis cursus, quis ultrices lorem posuere.
-        Suspendisse placerat posuere feugiat. Aenean ultricies faucibus dolor,
-        et cursus nibh euismod vitae. Sed vitae accumsan odio, cursus commodo
-        velit. Nunc at iaculis nulla.
-  heading: What we offer
+    - text: >-
+        Your vision can be brought to life with the creation of new spaces and
+        transformation of existing properties. We offer a range of design and
+        build, traditional construction and solutions.
+
+
+        From a small makeover to a multi-million-pound new build development, we
+        have the skills and expertise required to deliver projects on-time, to
+        budget and with zero defects.
+    - text: >-
+        Whether you are interested in a unique garden design or have simple
+        needs for planting, we can deliver many one-stop services that are very
+        affordable throughout the Midlands. Please give us a call if you need.
+  heading: Services
+  description: |
+    The Services D&D Provide
 main:
-  heading: Great coffee with no compromises
+  heading: Portfolio
   description: >
     We hold our coffee to the highest standards from the shrub to the cup.
     That’s why we’re meticulous and transparent about each step of the coffee’s
