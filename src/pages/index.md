@@ -1,34 +1,32 @@
 ---
 templateKey: index-page
 intro:
-  title: We are Midlands based construction specialists in
   heading: 'Extensions, Renovations, New Builds and Landscaping'
-  subheading: Tell Me More
   image: /img/home-jumbotron.jpg
+  subheading: Tell Me More
+  title: We are Midlands based construction specialists in
 services:
-  heading: Services
   description: The Services D&D Provide
+  heading: Services
   services:
-    - image: /img/home-jumbotron.jpg
-      heading: Extensions
-      description: >
+    - description: >
         Adding a house extension to your home is a very good idea and straight
         forward. If you have not yet extended your house to the back or side,
         why not go ahead, it will certainly give you more space to move around
         your home, will most probably double the kitchen or living room and also
         increase the total value of your property, should you sell or let in the
         future.
-    - image: /img/home-jumbotron.jpg
-      heading: Renovations
-      description: >-
+      heading: Extensions
+      image: /img/extensions-icon.svg
+    - description: >-
         Pellentesque habitant morbi tristique senectus et netus et malesuada
         fames ac turpis egestas. Quisque hendrerit enim eu rutrum blandit.
         Aliquam erat volutpat. Nulla nibh enim, sodales eu purus quis, tempus
         porta leo. In eleifend nunc vitae ligula congue, at vestibulum turpis
         dapibus.
-    - image: /img/home-jumbotron.jpg 
-      heading: New Builds
-      description: >-
+      heading: Renovations
+      image: /img/renovations-icon.svg
+    - description: >-
         Your vision can be brought to life with the creation of new spaces and
         transformation of existing properties. We offer a range of design and
         build, traditional construction and solutions.
@@ -37,12 +35,14 @@ services:
         From a small makeover to a multi-million-pound new build development, we
         have the skills and expertise required to deliver projects on-time, to
         budget and with zero defects.
-    - image: /img/home-jumbotron.jpg
-      heading: Landscaping
-      description: >-
+      heading: New Builds
+      image: /img/new-builds-icon.svg
+    - description: >-
         Whether you are interested in a unique garden design or have simple
         needs for planting, we can deliver many one-stop services that are very
         affordable throughout the Midlands. Please give us a call if you need.
+      heading: Landscaping
+      image: /img/landscaping-icon.svg
 main:
   description: >
     We hold our coffee to the highest standards from the shrub to the cup.
