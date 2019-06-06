@@ -23,10 +23,10 @@ const Services = ({ services }) => (
     {services.map((service,index) => (
       <div key={index} className="col-md-6 col-lg-3">
         <span className="dnd-service-icon-container">
-          <img className="dnd-service-icon" src={handleServiceIcon(service.title)} alt={service.title} />
+          <img className="dnd-service-icon" src={handleServiceIcon(service.heading)} alt={service.heading} />
         </span>
-        <h4 className="dnd-service-heading">{service.title}</h4>
-        <p className="text-muted">{service.text}</p>
+        <h4 className="dnd-service-heading">{service.heading}</h4>
+        <p className="text-muted">{service.description}</p>
       </div>
     ))}
   </div>
@@ -36,7 +36,8 @@ Services.propTypes = {
   services: PropTypes.arrayOf(
     PropTypes.shape({
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-      text: PropTypes.string,
+      heading: PropTypes.string,
+      description: PropTypes.string
     })
   ),
   siteMetadata: PropTypes.object

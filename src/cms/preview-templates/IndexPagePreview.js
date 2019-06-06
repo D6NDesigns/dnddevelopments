@@ -9,7 +9,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
     return (
       <IndexPageTemplate
         intro={data.intro || {}}
-        services={data.services || { blurbs: [] }}
+        services={data.services || { services: [] }}
       />
     )
   } else {

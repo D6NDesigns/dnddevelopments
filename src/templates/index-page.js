@@ -18,7 +18,7 @@ export const IndexPageTemplate = ({
     <React.Fragment>
       <Intro {...intro} />
       <Section title={siteMetadata.pages[0]} description={services.description}>
-        <Services services={services.blurbs} />
+        <Services services={services.services} />
       </Section>
       <Section title={siteMetadata.pages[1]} description={'Previous work by D&D, click an image to view more'}>
         <Portfolio jobs={siteMetadata.jobs} />
@@ -34,7 +34,7 @@ IndexPageTemplate.propTypes = {
   intro: PropTypes.object.isRequired,
   description: PropTypes.string,
   services: PropTypes.shape({
-    blurbs: PropTypes.array,
+    services: PropTypes.array,
   }),
 }
 
@@ -78,12 +78,19 @@ export const pageQuery = graphql`
           }
         }
         services {
-          blurbs {
-            title
-            text
-          }
           heading
           description
+          services {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            heading
+            description
+          }
         }
       }
     }
