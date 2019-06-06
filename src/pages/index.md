@@ -4,14 +4,11 @@ title: We are Midlands based construction specialists in
 image: /img/home-jumbotron.jpg
 heading: 'Extensions, Renovations, New Builds and Landscaping'
 subheading: Tell Me More
-mainpitch:
-  title: Great coffee with a conscience
-  description: kjllhjhjkkjhjh
-description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
+intro:
+  title: We are Midlands based construction specialists in
+  heading: 'Extensions, Renovations, New Builds and Landscaping'
+  subheading: Tell Me More
+  image: /img/home-jumbotron.jpg
 services:
   blurbs:
     - title: Extensions

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Intro = class extends React.Component {
   render() {
-    const {title, heading, subheading, image } = this.props;
+    const { title, heading, subheading, image } = this.props;
     return (
       <header
         id="intro"
