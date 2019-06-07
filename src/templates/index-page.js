@@ -81,13 +81,6 @@ export const pageQuery = graphql`
           heading
           description
           services {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
             heading
             description
           }

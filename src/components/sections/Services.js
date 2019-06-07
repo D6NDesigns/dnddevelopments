@@ -35,7 +35,6 @@ const Services = ({ services }) => (
 Services.propTypes = {
   services: PropTypes.arrayOf(
     PropTypes.shape({
-      image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
       heading: PropTypes.string,
       description: PropTypes.string
     })
