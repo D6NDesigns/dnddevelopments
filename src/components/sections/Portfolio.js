@@ -14,16 +14,10 @@ const Portfolio = ({ jobs }) => {
                 <img src={plusIcon} alt='' />
               </div>
             </div>
-            {/* <img 
-              className="img-fluid" 
-              src={`img/portfolio-${job.location.split(" ").join("-").toLowerCase()}-1.jpg`} 
-              alt={job.location} 
-            /> */}
             <PreviewCompatibleImage
               imageInfo={{
                 image: job.image,
                 alt: job.location,
-                // imageStyle: {height: '225px', width: '225px'},
                 className: 'img-fluid'
               }}
             />
