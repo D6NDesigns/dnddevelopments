@@ -6,7 +6,6 @@ import Intro from '../components/sections/Intro';
 import Services from '../components/sections/Services';
 import Portfolio from '../components/sections/Portfolio';
 import About from '../components/sections/About';
-import useSiteMetadata from '../components/SiteMetadata';
 import Section from '../components/Section';
 
 export const IndexPageTemplate = ({
@@ -15,17 +14,16 @@ export const IndexPageTemplate = ({
   portfolio,
   about
 }) => {
-  const siteMetadata = useSiteMetadata();
   return (
     <React.Fragment>
       <Intro {...intro} />
-      <Section title={siteMetadata.pages[0]} description={services.description}>
+      <Section title={services.heading} description={services.description}>
         <Services services={services.services} />
       </Section>
-      <Section title={siteMetadata.pages[1]} description={portfolio.description}>
+      <Section title={portfolio.heading} description={portfolio.description}>
         <Portfolio jobs={portfolio.jobs} />
       </Section>
-      <Section title={siteMetadata.pages[2]} description={about.description}>
+      <Section title={about.heading} description={about.description}>
         <About about={about.team} />
       </Section>
     </React.Fragment>
