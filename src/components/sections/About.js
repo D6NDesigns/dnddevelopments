@@ -6,7 +6,11 @@ const About = ({ about }) => (
     {about.map((person,index) => (
       <div key={index} className="col-sm-6">
         <div className="team-member">
-          <img className="mx-auto rounded-circle" src={`img/about-${person.name.split(" ").join("-").toLowerCase()}.jpg`} alt={person.name} />
+          <img 
+            className="mx-auto rounded-circle" 
+            src={`img/about-${person.name.split(" ").join("-").toLowerCase()}.jpg`} 
+            alt={person.name} 
+          />
           <h4>{person.name}</h4>
           {person.info.map((info,index) => (
             <p key={index} className="text-muted">{info}</p>
@@ -21,8 +25,6 @@ About.propTypes = {
   about: PropTypes.arrayOf(
     PropTypes.shape({
       person: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-      title: PropTypes.string,
-      services: PropTypes.string
     })
   )
 }

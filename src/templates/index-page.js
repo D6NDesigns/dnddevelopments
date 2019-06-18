@@ -12,6 +12,7 @@ import Section from '../components/Section';
 export const IndexPageTemplate = ({
   intro,
   services,
+  about
 }) => {
   const siteMetadata = useSiteMetadata();
   return (
@@ -23,8 +24,8 @@ export const IndexPageTemplate = ({
       <Section title={siteMetadata.pages[1]} description={'Previous work by D&D, click an image to view more'}>
         <Portfolio jobs={siteMetadata.jobs} />
       </Section>
-      <Section title={siteMetadata.pages[2]} description={'About D&D'}>
-        <About about={siteMetadata.about} />
+      <Section title={siteMetadata.pages[2]} description={about.description}>
+        <About about={about.team} />
       </Section>
     </React.Fragment>
   )
@@ -36,6 +37,9 @@ IndexPageTemplate.propTypes = {
   services: PropTypes.shape({
     services: PropTypes.array,
   }),
+  about: PropTypes.shape({
+    about: PropTypes.array,
+  }),
 }
 
 const IndexPage = ({ data }) => {
@@ -46,6 +50,7 @@ const IndexPage = ({ data }) => {
         intro={frontmatter.intro}
         description={frontmatter.description}
         services={frontmatter.services}
+        about={frontmatter.about}
       />
     </Layout>
   )
@@ -83,6 +88,21 @@ export const pageQuery = graphql`
           services {
             heading
             description
+          }
+        }
+        about {
+          heading
+          description
+          team {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            name
+            info
           }
         }
       }

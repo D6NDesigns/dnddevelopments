@@ -38,16 +38,7 @@ module.exports = {
         title: 'Spondon',
         services: 'Extensions'
       }
-    ],
-    about: [
-      {
-        name: 'Danny Hayes',
-        info:  ['12 years experience in the Building Trade','NVQ Level 3 Bricklaying','Loves to stay at the YMCA'],
-      },{
-        name: 'Darren Tudgay',
-        info:  ['20 years experience in the Building Trade'],
-      }
-    ],
+    ]
   },
   plugins: [
     'gatsby-plugin-react-helmet',

@@ -43,6 +43,21 @@ services:
         Whether you are interested in a unique garden design or have simple
         needs for planting, we can deliver many one-stop services that are very
         affordable throughout the Midlands. Please give us a call if you need.
+about:
+  heading: About
+  description: About D&D
+  team: 
+    - image: /img/extensions-icon.svg
+      name: Danny Hayes
+      info:
+        - 12 years experience in the Building Trade
+        - NVQ Level 3 Bricklaying
+        - Loves to stay at the YMCA
+
+    - image: /img/renovations-icon.svg
+      name: Darren Tudgay
+      info: 
+        - 20 years experience in the Building Trade
 main:
   description: >
     We hold our coffee to the highest standards from the shrub to the cup.
