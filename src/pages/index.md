@@ -6,7 +6,7 @@ intro:
   subheading: Tell Me More
   title: We are Midlands based construction specialists in
 services:
-  description: The Services D&D Provide
+  description: The Services D&D Provide.
   heading: Services
   services:
     - description: >
@@ -44,7 +44,7 @@ services:
       heading: Landscaping
       image: /img/landscaping-icon.svg
 about:
-  description: About D&D
+  description: About D&D.
   heading: About
   team:
     - image: /img/about-danny-hayes.jpg
