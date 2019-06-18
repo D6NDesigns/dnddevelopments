@@ -12,6 +12,7 @@ import Section from '../components/Section';
 export const IndexPageTemplate = ({
   intro,
   services,
+  portfolio,
   about
 }) => {
   const siteMetadata = useSiteMetadata();
@@ -21,8 +22,8 @@ export const IndexPageTemplate = ({
       <Section title={siteMetadata.pages[0]} description={services.description}>
         <Services services={services.services} />
       </Section>
-      <Section title={siteMetadata.pages[1]} description={'Previous work by D&D, click an image to view more'}>
-        <Portfolio jobs={siteMetadata.jobs} />
+      <Section title={siteMetadata.pages[1]} description={portfolio.description}>
+        <Portfolio jobs={portfolio.jobs} />
       </Section>
       <Section title={siteMetadata.pages[2]} description={about.description}>
         <About about={about.team} />
@@ -33,9 +34,11 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   intro: PropTypes.object.isRequired,
-  description: PropTypes.string,
   services: PropTypes.shape({
     services: PropTypes.array,
+  }),
+  portfolio: PropTypes.shape({
+    portfolio: PropTypes.array,
   }),
   about: PropTypes.shape({
     about: PropTypes.array,
@@ -49,6 +52,7 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate
         intro={frontmatter.intro}
         services={frontmatter.services}
+        portfolio={frontmatter.portfolio}
         about={frontmatter.about}
       />
     </Layout>
@@ -87,6 +91,21 @@ export const pageQuery = graphql`
           services {
             heading
             description
+          }
+        }
+        portfolio {
+          heading
+          description
+          jobs {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 400, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            location
+            services
           }
         }
         about {

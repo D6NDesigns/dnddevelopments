@@ -10,10 +10,6 @@ const useSiteMetadata = () => {
             description
             pages
             services
-            jobs {
-              title
-              services
-            }
           }
         }
       }

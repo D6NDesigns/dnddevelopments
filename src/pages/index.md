@@ -43,6 +43,38 @@ services:
         affordable throughout the Midlands. Please give us a call if you need.
       heading: Landscaping
       image: /img/landscaping-icon.svg
+portfolio:
+  heading: Portfolio
+  description: Previous work by D&D, click an image to view more.
+  jobs:
+    - image: /img/portfolio-aston-on-trent-1.jpg
+      location: Aston On Trent
+      services:
+      - Extensions
+      - Landscaping
+    - image: /img/portfolio-lutterworth-1.jpg
+      location: Lutterworth
+      services:
+      - Extensions
+      - Landscaping
+    - image: /img/portfolio-leicester-1.jpg
+      location: Leicester
+      services:
+      - Landscaping
+    - image: /img/portfolio-buxton-1.jpg
+      location: Buxton
+      services:
+      - Extensions
+    - image: /img/portfolio-mapperley-top-1.jpg
+      location: Mapperley Top
+      services:
+      - Extensions
+      - Renovations
+      - Landscaping
+    - image: /img/portfolio-spondon-1.jpg
+      location: Spondon
+      services:
+      - Extensions
 about:
   description: About D&D.
   heading: About
