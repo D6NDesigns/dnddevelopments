@@ -48,7 +48,6 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         intro={frontmatter.intro}
-        description={frontmatter.description}
         services={frontmatter.services}
         about={frontmatter.about}
       />
@@ -96,7 +95,7 @@ export const pageQuery = graphql`
           team {
             image {
               childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
+                fluid(maxWidth: 225, maxHeight: 225, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }

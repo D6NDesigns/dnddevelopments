@@ -1,11 +1,10 @@
-// Styling for the team section
-.team-member {
+// Styling for the About section
+.dnd-team-member {
   margin-bottom: 50px;
   text-align: center;
   img {
-    width: 225px;
-    height: 225px;
     border: 7px solid $white;
+    border-radius: 50%;
   }
   h4 {
     margin-top: 25px;

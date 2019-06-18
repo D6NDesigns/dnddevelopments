@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import PreviewCompatibleImage from '../../components/PreviewCompatibleImage';
 
 const About = ({ about }) => (
   <div className="row">
     {about.map((person,index) => (
       <div key={index} className="col-sm-6">
-        <div className="team-member">
-          <img 
-            className="mx-auto rounded-circle" 
-            src={`img/about-${person.name.split(" ").join("-").toLowerCase()}.jpg`} 
-            alt={person.name} 
+        <div className="dnd-team-member">
+          <PreviewCompatibleImage
+            imageInfo={{
+              image: person.image,
+              alt: person.name,
+              imageStyle: {height: '225px', width: '225px'},
+              className: 'mx-auto'
+            }}
           />
           <h4>{person.name}</h4>
           {person.info.map((info,index) => (
