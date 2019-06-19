@@ -17,14 +17,14 @@ export const IndexPageTemplate = ({
   return (
     <React.Fragment>
       <Intro {...intro} />
-      <Section title={services.heading} description={services.description}>
+      <Section {...services}>
         <Services services={services.services} />
       </Section>
-      <Section title={portfolio.heading} description={portfolio.description}>
+      <Section {...portfolio}>
         <Portfolio jobs={portfolio.jobs} />
       </Section>
-      <Section title={about.heading} description={about.description}>
-        <About about={about.team} />
+      <Section {...about}>
+        <About team={about.team} />
       </Section>
     </React.Fragment>
   )

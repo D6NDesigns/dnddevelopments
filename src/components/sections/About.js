@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PreviewCompatibleImage from '../../components/PreviewCompatibleImage';
 
-const About = ({ about }) => (
+const About = ({ team }) => (
   <div className="row">
-    {about.map((person,index) => (
+    {team.map((person,index) => (
       <div key={index} className="col-sm-6">
         <div className="dnd-team-member">
           <PreviewCompatibleImage
@@ -26,7 +26,7 @@ const About = ({ about }) => (
 );
 
 About.propTypes = {
-  about: PropTypes.arrayOf(
+  team: PropTypes.arrayOf(
     PropTypes.shape({
       person: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     })
