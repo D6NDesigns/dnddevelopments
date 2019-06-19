@@ -10,6 +10,8 @@ const IndexPagePreview = ({ entry, getAsset }) => {
       <IndexPageTemplate
         intro={data.intro || {}}
         services={data.services || { services: [] }}
+        portfolio={data.portfolio || { portfolio: [] }}
+        about={data.about || { about: [] }}
       />
     )
   } else {
