@@ -31,7 +31,6 @@ services:
         transformation of existing properties. We offer a range of design and
         build, traditional construction and solutions.
 
-
         From a small makeover to a multi-million-pound new build development, we
         have the skills and expertise required to deliver projects on-time, to
         budget and with zero defects.
@@ -47,31 +46,39 @@ portfolio:
   description: 'Previous work by D&D, click an image to view more.'
   heading: Portfolio
   jobs:
-    - image: /img/portfolio-aston-on-trent-1.jpg
+    - images:
+        - image: /img/portfolio-aston-on-trent-1.jpg
+        - image: /img/portfolio-aston-on-trent-1.jpg
+        - image: /img/portfolio-aston-on-trent-1.jpg
       location: Aston On Trent
       services:
         - Extensions
         - Landscaping
-    - image: /img/portfolio-lutterworth-1.jpg
+    - images: 
+        - image: /img/portfolio-lutterworth-1.jpg
       location: Lutterworth
       services:
         - Extensions
         - Landscaping
-    - image: /img/portfolio-leicester-1.jpg
+    - images:
+        - image: /img/portfolio-leicester-1.jpg
       location: Leicester
       services:
         - Landscaping
-    - image: /img/portfolio-buxton-1.jpg
+    - images:
+        - image: /img/portfolio-buxton-1.jpg
       location: Buxton
       services:
         - Extensions
-    - image: /img/portfolio-mapperley-top-1.jpg
+    - images:
+      - image: /img/portfolio-mapperley-top-1.jpg
       location: Mapperley Top
       services:
         - Extensions
         - Renovations
         - Landscaping
-    - image: /img/portfolio-spondon-1.jpg
+    - images:
+      - image: /img/portfolio-spondon-1.jpg
       location: Spondon
       services:
         - Extensions

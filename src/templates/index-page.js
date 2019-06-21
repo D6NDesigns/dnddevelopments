@@ -95,10 +95,26 @@ export const pageQuery = graphql`
           heading
           description
           jobs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 400, quality: 100) {
-                  ...GatsbyImageSharpFluid
+            images {
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 400, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              image2 {
+                childImageSharp {
+                  fluid(maxWidth: 400, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              image3 {
+                childImageSharp {
+                  fluid(maxWidth: 400, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
               }
             }

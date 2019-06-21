@@ -42,7 +42,7 @@ class Portfolio extends Component {
                 </div>
                 <PreviewCompatibleImage
                   imageInfo={{
-                    image: job.image,
+                    image: job.images[0].image,
                     alt: job.location,
                     className: 'img-fluid'
                   }}
@@ -79,13 +79,18 @@ class Portfolio extends Component {
                         <div className="modal-body">
                           <h2 className="text-uppercase">{this.state.job.location}</h2>
                           <p className="item-intro text-muted">{this.state.job.services.join(', ')}.</p>
-                          <PreviewCompatibleImage
-                            imageInfo={{
-                              image: this.state.job.image,
-                              alt: this.state.job.location,
-                              className: 'img-fluid'
-                            }}
-                          />
+                          {
+                            this.state.job.images.map((image,index) => (
+                              <PreviewCompatibleImage
+                                key={index}
+                                imageInfo={{
+                                  image: image.image,
+                                  alt: this.state.job.location,
+                                  className: 'img-fluid'
+                                }}
+                              />
+                            ))
+                          }
                         </div>
                       </div>
                     </div>
@@ -104,7 +109,7 @@ class Portfolio extends Component {
 Portfolio.propTypes = {
   jobs: PropTypes.arrayOf(
     PropTypes.shape({
-      image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+      images: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
       location: PropTypes.string,
       services: PropTypes.array
     })
