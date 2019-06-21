@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import plusIcon from '../../img/icons/plus-icon.svg';
 import PreviewCompatibleImage from '../../components/PreviewCompatibleImage';
+import Flickity from 'react-flickity-component';
 
 class Portfolio extends Component {
   constructor(props) {
@@ -73,27 +74,28 @@ class Portfolio extends Component {
                   >
                     <img src={plusIcon} alt='' />
                   </div>
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-lg-8 mx-auto">
-                        <div className="modal-body">
-                          <h2 className="text-uppercase">{this.state.job.location}</h2>
-                          <p className="item-intro text-muted">{this.state.job.services.join(', ')}.</p>
-                          {
-                            this.state.job.images.map((image,index) => (
-                              <PreviewCompatibleImage
-                                key={index}
-                                imageInfo={{
-                                  image: image.image,
-                                  alt: this.state.job.location,
-                                  className: 'img-fluid'
-                                }}
-                              />
-                            ))
-                          }
-                        </div>
-                      </div>
+                  <div className="modal-body">
+                    <div className="container">
+                      <h2 className="text-uppercase">{this.state.job.location}</h2>
+                      <p className="item-intro text-muted">{this.state.job.services.join(', ')}.</p>
                     </div>
+                    <Flickity
+                      className={'carousel'} // default ''
+                      elementType={'div'} // default 'div'
+                      disableImagesLoaded={false} // default false
+                      reloadOnUpdate
+                      static
+                    >
+                    {
+                      this.state.job.images.map((image,index) => (
+                        <img 
+                          key={index} 
+                          src={image.image.childImageSharp.fluid.src} 
+                          alt=''
+                        />
+                      ))
+                    }
+                    </Flickity>
                   </div>
                 </div>
               </div>
