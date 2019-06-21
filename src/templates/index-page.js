@@ -103,20 +103,6 @@ export const pageQuery = graphql`
                   }
                 }
               }
-              image2 {
-                childImageSharp {
-                  fluid(maxWidth: 400, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-              image3 {
-                childImageSharp {
-                  fluid(maxWidth: 400, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
             }
             location
             services
