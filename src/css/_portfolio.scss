@@ -116,6 +116,7 @@
     background-color: transparent;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
+    z-index: 3;
 
     &:hover {
       opacity: 0.3;
