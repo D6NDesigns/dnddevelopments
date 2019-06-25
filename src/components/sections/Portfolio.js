@@ -78,24 +78,25 @@ class Portfolio extends Component {
                     <div className="container">
                       <h2 className="text-uppercase">{this.state.job.location}</h2>
                       <p className="item-intro text-muted">{this.state.job.services.join(', ')}.</p>
+                      <Flickity
+                        className={'carousel'} // default ''
+                        elementType={'div'} // default 'div'
+                        disableImagesLoaded={false} // default false
+                        reloadOnUpdate
+                        static
+                      >
+                      {
+                        this.state.job.images.map((image,index) => (
+                          <img 
+                            key={index} 
+                            src={image.image.childImageSharp.fluid.src} 
+                            alt=''
+                            className="img-fluid"
+                          />
+                        ))
+                      }
+                      </Flickity>
                     </div>
-                    <Flickity
-                      className={'carousel'} // default ''
-                      elementType={'div'} // default 'div'
-                      disableImagesLoaded={false} // default false
-                      reloadOnUpdate
-                      static
-                    >
-                    {
-                      this.state.job.images.map((image,index) => (
-                        <img 
-                          key={index} 
-                          src={image.image.childImageSharp.fluid.src} 
-                          alt=''
-                        />
-                      ))
-                    }
-                    </Flickity>
                   </div>
                 </div>
               </div>

@@ -48,8 +48,8 @@ portfolio:
   jobs:
     - images:
         - image: /img/portfolio-aston-on-trent-1.jpg
-        - image: /img/portfolio-aston-on-trent-1.jpg
-        - image: /img/portfolio-aston-on-trent-1.jpg
+        - image: /img/portfolio-aston-on-trent-2.jpg
+        - image: /img/portfolio-aston-on-trent-3.jpg
       location: Aston On Trent
       services:
         - Extensions
