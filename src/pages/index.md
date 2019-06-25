@@ -50,11 +50,12 @@ portfolio:
         - image: /img/portfolio-aston-on-trent-1.jpg
         - image: /img/portfolio-aston-on-trent-2.jpg
         - image: /img/portfolio-aston-on-trent-3.jpg
+        - image: /img/portfolio-aston-on-trent-4.jpg
       location: Aston On Trent
       services:
         - Extensions
         - Landscaping
-    - images: 
+    - images:
         - image: /img/portfolio-lutterworth-1.jpg
       location: Lutterworth
       services:
@@ -71,14 +72,14 @@ portfolio:
       services:
         - Extensions
     - images:
-      - image: /img/portfolio-mapperley-top-1.jpg
+        - image: /img/portfolio-mapperley-top-1.jpg
       location: Mapperley Top
       services:
         - Extensions
         - Renovations
         - Landscaping
     - images:
-      - image: /img/portfolio-spondon-1.jpg
+        - image: /img/portfolio-spondon-1.jpg
       location: Spondon
       services:
         - Extensions
