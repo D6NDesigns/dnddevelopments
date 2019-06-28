@@ -83,6 +83,12 @@ portfolio:
         - Landscaping
     - images:
         - image: /img/portfolio-buxton-1.jpg
+        - image: /img/portfolio-butxon-2.jpg
+        - image: /img/portfolio-butxon-3.jpg
+        - image: /img/portfolio-butxon-4.jpg
+        - image: /img/portfolio-butxon-5.jpg
+        - image: /img/portfolio-butxon-6.jpg
+        - image: /img/portfolio-butxon-7.jpg
       location: Buxton
       services:
         - Extensions
