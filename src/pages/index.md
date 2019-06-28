@@ -106,6 +106,13 @@ portfolio:
         - Landscaping
     - images:
         - image: /img/portfolio-spondon-1.jpg
+        - image: /img/portfolio-spondon-2.jpg
+        - image: /img/portfolio-spondon-3.jpg
+        - image: /img/portfolio-spondon-4.jpg
+        - image: /img/portfolio-spondon-5.jpg
+        - image: /img/portfolio-spondon-6.jpg
+        - image: /img/portfolio-spondon-7.jpg
+        - image: /img/portfolio-spondon-8.jpg
       location: Spondon
       services:
         - Extensions
