@@ -84,8 +84,6 @@ portfolio:
     - images:
         - image: /img/portfolio-buxton-1.jpg
         - image: /img/portfolio-butxon-2.jpg
-        - image: /img/portfolio-butxon-3.jpg
-        - image: /img/portfolio-butxon-4.jpg
         - image: /img/portfolio-butxon-5.jpg
         - image: /img/portfolio-butxon-6.jpg
         - image: /img/portfolio-butxon-7.jpg
@@ -107,7 +105,6 @@ portfolio:
     - images:
         - image: /img/portfolio-spondon-1.jpg
         - image: /img/portfolio-spondon-2.jpg
-        - image: /img/portfolio-spondon-3.jpg
         - image: /img/portfolio-spondon-4.jpg
         - image: /img/portfolio-spondon-5.jpg
         - image: /img/portfolio-spondon-6.jpg
