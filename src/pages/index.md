@@ -60,6 +60,13 @@ portfolio:
         - Landscaping
     - images:
         - image: /img/portfolio-lutterworth-1.jpg
+        - image: /img/portfolio-lutterworth-2.jpg
+        - image: /img/portfolio-lutterworth-3.jpg
+        - image: /img/portfolio-lutterworth-4.jpg
+        - image: /img/portfolio-lutterworth-5.jpg
+        - image: /img/portfolio-lutterworth-6.jpg
+        - image: /img/portfolio-lutterworth-7.jpg
+        - image: /img/portfolio-lutterworth-8.jpg
       location: Lutterworth
       services:
         - Extensions
