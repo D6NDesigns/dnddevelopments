@@ -94,6 +94,11 @@ portfolio:
         - Extensions
     - images:
         - image: /img/portfolio-mapperley-top-1.jpg
+        - image: /img/portfolio-mapperley-top-2.jpg
+        - image: /img/portfolio-mapperley-top-3.jpg
+        - image: /img/portfolio-mapperley-top-4.jpg
+        - image: /img/portfolio-mapperley-top-5.jpg
+        - image: /img/portfolio-mapperley-top-6.jpg
       location: Mapperley Top
       services:
         - Extensions
