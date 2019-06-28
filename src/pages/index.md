@@ -73,6 +73,11 @@ portfolio:
         - Landscaping
     - images:
         - image: /img/portfolio-leicester-1.jpg
+        - image: /img/portfolio-leicester-2.jpg
+        - image: /img/portfolio-leicester-3.jpg
+        - image: /img/portfolio-leicester-4.jpg
+        - image: /img/portfolio-leicester-5.jpg
+        - image: /img/portfolio-leicester-6.jpg
       location: Leicester
       services:
         - Landscaping
