@@ -35,7 +35,7 @@ body {
   &.dnd-section {
     padding: 100px 0;
 
-    &:nth-child(odd) {
+    &:nth-child(even) {
       background-color: #f8f9fa;
     }
 

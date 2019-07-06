@@ -101,10 +101,18 @@ https://flickity.metafizzy.co
 .flickity-prev-next-button.previous {
   left: -44px;
   transform: rotate(-90deg);
+
+  @media (min-width: 768px) {
+    left: 0;
+  }
 }
 .flickity-prev-next-button.next {
   right: -44px;
   transform: rotate(90deg);
+
+  @media (min-width: 768px) {
+    right: 0;
+  }
 }
 /* right to left */
 .flickity-rtl .flickity-prev-next-button.previous {

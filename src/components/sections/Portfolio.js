@@ -79,7 +79,7 @@ class Portfolio extends Component {
                       <h2 className="text-uppercase">{this.state.job.location}</h2>
                       <p className="item-intro text-muted">{this.state.job.services.join(', ')}.</p>
                       <Flickity
-                        className={'carousel'} // default ''
+                        className={''} // default ''
                         elementType={'div'} // default 'div'
                         disableImagesLoaded={false} // default false
                         reloadOnUpdate
