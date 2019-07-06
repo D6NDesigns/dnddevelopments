@@ -2,18 +2,6 @@
 .dnd-nav {
   background-color: transparent;
 
-  &.dnd-nav-is-showing {
-    @media (max-width: 992px) {
-      background-color: $dnd-grey;
-    }
-
-    .navbar-toggler img {
-      width: 27px;
-      height: 27px;
-      transform: rotate(45deg);
-    }
-  }
-
   .navbar-toggler {
     width: 40px;
     height: 40px;
@@ -64,22 +52,37 @@
         letter-spacing: 1px;
         color: white;
         @include heading-font;
-      }
-      &.dnd-nav-item-is-active,
-      &:hover {
-        a {
+
+        &.dnd-nav-link-is-active,
+        &:hover {
           color: $primary;
         }
       }
     }
   }
 
-@media(min-width:992px) {
+  &.dnd-nav-has-background {
+    background-color: $dnd-grey;
+  }
+
+  &.dnd-nav-is-showing {
+    @media (max-width: 992px) {
+      background-color: $dnd-grey;
+    }
+
+    .navbar-toggler img {
+      width: 27px;
+      height: 27px;
+      transform: rotate(45deg);
+    }
+  }
+
+  @media(min-width:992px) {
     padding-top: 25px;
     padding-bottom: 25px;
-    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
-    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
-    transition: padding-top 0.3s, padding-bottom 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
     border: none;
     background-color: transparent;
     .navbar-brand {
@@ -106,18 +109,4 @@
     }
   }
 
-}
-
-.dnd-nav-background {
-  position: fixed;
-  z-index: 3;
-  top: 0;
-  display: block;
-  height: 86px;
-  width: 100vw;
-  background-color: $dnd-grey;
-
-  @media(min-width: 768px) {
-    height: 110px;
-  }
 }

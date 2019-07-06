@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 
 const Intro = class extends React.Component {
   render() {
@@ -21,7 +22,15 @@ const Intro = class extends React.Component {
             <h3 className="intro-heading text-uppercase">
               {heading}
             </h3>
-            <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/#services">{subheading}</a>
+            <Link 
+              className="btn btn-primary btn-xl text-uppercase"
+              duration={350}
+              spy={true}
+              smooth={true}
+              to="services"
+            >
+              {subheading}
+            </Link>
           </div>
         </div>
       </header>
