@@ -1,6 +1,9 @@
 // Styling for the navbar
 .dnd-nav {
   background-color: transparent;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
 
   .navbar-toggler {
     width: 40px;
@@ -33,6 +36,9 @@
   
   .navbar-brand {
     color: $primary;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
     &.active,
     &:active,
     &:focus,
@@ -80,16 +86,10 @@
   @media(min-width:992px) {
     padding-top: 25px;
     padding-bottom: 25px;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
     border: none;
     background-color: transparent;
     .navbar-brand {
       font-size: 1.75em;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      transition: all 0.3s;
     }
     .navbar-nav {
       .nav-item {
