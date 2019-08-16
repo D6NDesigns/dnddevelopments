@@ -6,13 +6,15 @@ import Intro from '../components/sections/Intro';
 import Services from '../components/sections/Services';
 import Portfolio from '../components/sections/Portfolio';
 import About from '../components/sections/About';
+import Contact from '../components/sections/Contact';
 import Section from '../components/Section';
 
 export const IndexPageTemplate = ({
   intro,
   services,
   portfolio,
-  about
+  about,
+  contact
 }) => {
   return (
     <React.Fragment>
@@ -25,6 +27,9 @@ export const IndexPageTemplate = ({
       </Section>
       <Section {...about}>
         <About team={about.team} />
+      </Section>
+      <Section {...contact}>
+        <Contact {...contact} />
       </Section>
     </React.Fragment>
   )
@@ -41,6 +46,9 @@ IndexPageTemplate.propTypes = {
   about: PropTypes.shape({
     about: PropTypes.array,
   }),
+  contact: PropTypes.shape({
+    contact: PropTypes.array,
+  }),
 }
 
 const IndexPage = ({ data }) => {
@@ -52,6 +60,7 @@ const IndexPage = ({ data }) => {
         services={frontmatter.services}
         portfolio={frontmatter.portfolio}
         about={frontmatter.about}
+        contact={frontmatter.contact}
       />
     </Layout>
   )
@@ -123,6 +132,22 @@ export const pageQuery = graphql`
             info
           }
         }
+        contact {
+          heading
+          description
+          social
+          standard {
+            phone
+            email
+          }
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        },
       }
     }
   }
