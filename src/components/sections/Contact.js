@@ -1,5 +1,5 @@
 import React from 'react';
-// import { navigate } from 'gatsby-link';
+import { navigate } from 'gatsby-link';
 import PropTypes from 'prop-types';
 
 function encode(data) {
@@ -13,7 +13,6 @@ export default class Contact extends React.Component {
     super(props)
     this.state = { 
       isValidated: false,
-      hasSubmitted: false,
     }
   }
 
@@ -32,7 +31,7 @@ export default class Contact extends React.Component {
         ...this.state,
       }),
     })
-      .then(() => this.setState({ hasSubmitted: true }))
+      .then(() => navigate(form.getAttribute('action')))
       .catch(error => alert(error))
   }
 
@@ -51,89 +50,81 @@ export default class Contact extends React.Component {
         ))}
         </div>
         <div className="col-md-6">
-          {this.state.hasSubmitted && (
-            <React.Fragment>
-              <h4>Thank You</h4>
-              <p>D&amp;D have recieved your message and will be contact with you shortly.</p>
-            </React.Fragment>
-          )}
-          {!this.state.hasSubmitted && (
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-            >
-              {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-              <input type="hidden" name="form-name" value="contact" />
-              <div hidden>
-                <label>
-                  Don’t fill this out:{' '}
-                  <input 
-                    name="bot-field" 
-                    onChange={this.handleChange} 
-                  />
-                </label>
-              </div>
-              <div className="form-group">
-                <label className="label" htmlFor={'name'}>
-                  Your name
-                </label>
-                <input
-                  className="form-control"
-                  type={'text'}
-                  name={'name'}
-                  onChange={this.handleChange}
-                  id={'name'}
-                  required={true}
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+            <input type="hidden" name="form-name" value="contact" />
+            <div hidden>
+              <label>
+                Don’t fill this out:{' '}
+                <input 
+                  name="bot-field" 
+                  onChange={this.handleChange} 
                 />
-              </div>
-              <div className="form-group">
-                <label className="label" htmlFor={'phone'}>
-                  Your phone number
-                </label>
-                <input
-                  className="form-control"
-                  type={'phone'}
-                  name={'phone'}
-                  onChange={this.handleChange}
-                  id={'phone'}
-                  required={true}
-                />
-              </div>
-              <div className="form-group">
-                <label className="label" htmlFor={'email'}>
-                  Your email address
-                </label>
-                <input
-                  className="form-control"
-                  type={'email'}
-                  name={'email'}
-                  onChange={this.handleChange}
-                  id={'email'}
-                  required={true}
-                />
-              </div>
-              <div className="form-group">
-                <label className="label" htmlFor={'message'}>
-                  Your message
-                </label>
-                <textarea
-                  className="form-control"
-                  name={'message'}
-                  onChange={this.handleChange}
-                  id={'message'}
-                  required={true}
-                />
-              </div>
-              <div className="form-group">
-                <div data-netlify-recaptcha="true" />
-              </div>
-              <button className="btn btn-primary text-uppercase" type="submit">
-                Send Message
-              </button>
-            </form>
-        )}
+              </label>
+            </div>
+            <div className="form-group">
+              <label className="label" htmlFor={'name'}>
+                Your name
+              </label>
+              <input
+                className="form-control"
+                type={'text'}
+                name={'name'}
+                onChange={this.handleChange}
+                id={'name'}
+                required={true}
+              />
+            </div>
+            <div className="form-group">
+              <label className="label" htmlFor={'phone'}>
+                Your phone number
+              </label>
+              <input
+                className="form-control"
+                type={'phone'}
+                name={'phone'}
+                onChange={this.handleChange}
+                id={'phone'}
+                required={true}
+              />
+            </div>
+            <div className="form-group">
+              <label className="label" htmlFor={'email'}>
+                Your email address
+              </label>
+              <input
+                className="form-control"
+                type={'email'}
+                name={'email'}
+                onChange={this.handleChange}
+                id={'email'}
+                required={true}
+              />
+            </div>
+            <div className="form-group">
+              <label className="label" htmlFor={'message'}>
+                Your message
+              </label>
+              <textarea
+                className="form-control"
+                name={'message'}
+                onChange={this.handleChange}
+                id={'message'}
+                required={true}
+              />
+            </div>
+            <div className="form-group">
+              <div data-netlify-recaptcha="true" />
+            </div>
+            <button className="btn btn-primary text-uppercase" type="submit">
+              Send Message
+            </button>
+          </form>
         </div>
         <div className="col-md-12 text-center">
           {social.map((socialNetwork,index) => (
