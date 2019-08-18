@@ -1,6 +1,6 @@
 import React from 'react';
-import { navigate } from 'gatsby-link';
-// import PropTypes from 'prop-types';
+// import { navigate } from 'gatsby-link';
+import PropTypes from 'prop-types';
 
 function encode(data) {
   return Object.keys(data)
@@ -8,13 +8,16 @@ function encode(data) {
     .join('&')
 }
 
-const Contact = () => {
-
-  const handleChange = e => {
-    //this.setState({ [e.target.name]: e.target.value });
+export default class Contact extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { 
+      isValidated: false,
+      isSubmitted: false,
+    }
   }
 
-  const handleSubmit = e => {
+  handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
     fetch('/', {
@@ -25,102 +28,119 @@ const Contact = () => {
         ...this.state,
       }),
     })
-      .then(() => navigate(form.getAttribute('action')))
+      .then(() => this.setState({isSubmitted: true}))
       .catch(error => alert(error))
   }
 
-
-  return (
-    <div className="row">
-      <div className="col-md-6">
-        Phone, Email
+  render() {
+    const { standard, social } = this.props;
+    return (
+      <div className="row">
+        <div className="col-md-6">
+        {Object.keys(standard).map((key)=> (
+          <div key={key}>
+            <h4>Phone</h4>
+            <p className="text-muted"><a href={`tel:${standard[key].phone}`}>{standard[key].phone}</a></p>
+            <h4>Email</h4>
+            <p className="text-muted"><a href={`mailto:${standard[key].email}`}>{standard[key].email}</a></p>
+          </div>
+        ))}
+        </div>
+        <div className="col-md-6">
+          {this.state.isSubmitted && (
+            <React.Fragment>
+              <h4>Thank You!</h4>
+              <p className="text-muted">D&amp;D have recieved your message and will get in contact with you shortly.</p>
+            </React.Fragment>
+          )}
+          {!this.state.isSubmitted && (
+            <form
+              name="contact"
+              method="post"
+              // action="/contact/thanks/"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={this.handleSubmit}
+            >
+              {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+              <input type="hidden" name="form-name" value="contact" />
+              <div hidden>
+                <label>
+                  Don’t fill this out:{' '}
+                  <input 
+                    name="bot-field" 
+                    onChange={this.handleChange} 
+                  />
+                </label>
+              </div>
+              <div className="form-group">
+                <label className="label" htmlFor={'name'}>
+                  Your name
+                </label>
+                <input
+                  className="form-control"
+                  type={'text'}
+                  name={'name'}
+                  onChange={this.handleChange}
+                  id={'name'}
+                  required={true}
+                />
+              </div>
+              <div className="form-group">
+                <label className="label" htmlFor={'phone'}>
+                  Your phone number
+                </label>
+                <input
+                  className="form-control"
+                  type={'phone'}
+                  name={'phone'}
+                  onChange={this.handleChange}
+                  id={'phone'}
+                  required={true}
+                />
+              </div>
+              <div className="form-group">
+                <label className="label" htmlFor={'email'}>
+                  Your email address
+                </label>
+                <input
+                  className="form-control"
+                  type={'email'}
+                  name={'email'}
+                  onChange={this.handleChange}
+                  id={'email'}
+                  required={true}
+                />
+              </div>
+              <div className="form-group">
+                <label className="label" htmlFor={'message'}>
+                  Your message
+                </label>
+                <textarea
+                  className="form-control"
+                  name={'message'}
+                  onChange={this.handleChange}
+                  id={'message'}
+                  required={true}
+                />
+              </div>
+              <button className="btn btn-primary text-uppercase" type="submit">
+                Send Message
+              </button>
+            </form>
+          )}
+        </div>
+        <div className="col-md-12 text-center">
+          {social.map((socialNetwork,index) => (
+            <span key={index} className="text-muted">{socialNetwork} </span>
+          ))}
+        </div>
       </div>
-      <div className="col-md-6">
-        <form
-          name="contact"
-          method="post"
-          action="/contact/thanks/"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          onSubmit={handleSubmit}
-        >
-          {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-          <input type="hidden" name="form-name" value="contact" />
-          <div hidden>
-            <label>
-              Don’t fill this out:{' '}
-              <input 
-                name="bot-field" 
-                onChange={handleChange} 
-              />
-            </label>
-          </div>
-          <div className="form-group">
-            <label className="label" htmlFor={'name'}>
-              Your name
-            </label>
-            <input
-              className="form-control"
-              type={'text'}
-              name={'name'}
-              onChange={handleChange}
-              id={'name'}
-              required={true}
-            />
-          </div>
-          <div className="form-group">
-            <label className="label" htmlFor={'phone'}>
-              Your phone number
-            </label>
-            <input
-              className="form-control"
-              type={'phone'}
-              name={'phone'}
-              onChange={handleChange}
-              id={'phone'}
-              required={true}
-            />
-          </div>
-          <div className="form-group">
-            <label className="label" htmlFor={'email'}>
-              Your email address
-            </label>
-            <input
-              className="form-control"
-              type={'email'}
-              name={'email'}
-              onChange={handleChange}
-              id={'email'}
-              required={true}
-            />
-          </div>
-          <div className="form-group">
-            <label className="label" htmlFor={'message'}>
-              Your message
-            </label>
-            <textarea
-              className="form-control"
-              name={'message'}
-              onChange={handleChange}
-              id={'message'}
-              required={true}
-            />
-          </div>
-          <button className="btn btn-primary text-uppercase" type="submit">
-            Send Message
-          </button>
-        </form>
-      </div>
-    </div>
-  )
+    )
+  }
 };
 
-// Contact.propTypes = {
-//   team: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       person: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-//     })
-//   )
-// }
-
-export default Contact;
+Contact.propTypes = {
+  standard: PropTypes.array,
+  social: PropTypes.array,
+}

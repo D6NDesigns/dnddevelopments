@@ -1,9 +1,11 @@
 // Styling for the contact section
-section#contact {
+#contact {
   background-color: $dnd-grey;
   // background-image: url('../img/map-image.png');
   background-repeat: no-repeat;
   background-position: center;
+  color: #6c757d;
+
   .section-heading {
     color: $white;
   }
