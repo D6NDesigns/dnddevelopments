@@ -20,8 +20,6 @@ const Contact = ({ standard, social }) => (
         data-netlify-recaptcha="true"
         data-netlify="true"
       >
-        {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-        <input type="hidden" name="form-name" value="dnd-contact-form" />
         <div className="form-group">
           <label className="label" htmlFor={'name'}>
             Your name
