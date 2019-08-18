@@ -41,7 +41,7 @@ export default class Index extends React.Component {
             <div className="content">
               <h1>Contact</h1>
               <form
-                name="contact"
+                name="contactExample"
                 method="post"
                 action="/contact/thanks/"
                 data-netlify="true"
@@ -49,7 +49,7 @@ export default class Index extends React.Component {
                 onSubmit={this.handleSubmit}
               >
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="form-name" value="contactExample" />
                 <div hidden>
                   <label>
                     Don’t fill this out:{' '}
