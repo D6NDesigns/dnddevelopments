@@ -6,6 +6,10 @@
   background-position: center;
   color: #6c757d;
 
+  div[class^="col-"]{
+    background-color: rgba($dnd-grey,0.64);
+  }
+
   .section-heading {
     color: $white;
   }

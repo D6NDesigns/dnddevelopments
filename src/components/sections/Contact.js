@@ -36,18 +36,22 @@ export default class Contact extends React.Component {
   }
 
   render() {
-    const { standard, social } = this.props;
+    const { links } = this.props;
+    console.log(links);
     return (
       <div className="row">
         <div className="col-md-6">
-        {Object.keys(standard).map((key)=> (
-          <div key={key}>
-            <h4>Phone</h4>
-            <p className="text-muted"><a href={`tel:${standard[key].phone}`}>{standard[key].phone}</a></p>
-            <h4>Email</h4>
-            <p className="text-muted"><a href={`mailto:${standard[key].email}`}>{standard[key].email}</a></p>
-          </div>
-        ))}
+        {links.map(function(link, index){
+          if(link.type === 'standard'){
+            return (
+              <div key={index}>
+                <h4>{link.label}</h4>
+                <p className="text-muted"><a href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}>{link.address}</a></p>
+              </div>
+            );
+          }
+          return null;
+        })}
         </div>
         <div className="col-md-6">
           <form
@@ -127,9 +131,16 @@ export default class Contact extends React.Component {
           </form>
         </div>
         <div className="col-md-12 text-center">
-          {social.map((socialNetwork,index) => (
-            <span key={index} className="text-muted">{socialNetwork} </span>
-          ))}
+          {links.map(function(link, index){
+            if(link.type === 'social'){
+              return (
+                <span key={index}>
+                  {link.label}
+                </span>
+              );
+            }
+            return null;
+          })}
         </div>
       </div>
     )
@@ -137,6 +148,11 @@ export default class Contact extends React.Component {
 };
 
 Contact.propTypes = {
-  standard: PropTypes.array,
-  social: PropTypes.array,
+  jobs: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.string,
+      label: PropTypes.string,
+      address: PropTypes.array
+    })
+  )
 }

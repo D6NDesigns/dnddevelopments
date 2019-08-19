@@ -29,7 +29,7 @@ export const IndexPageTemplate = ({
         <About team={about.team} />
       </Section>
       <Section {...contact}>
-        <Contact {...contact} />
+        <Contact links={contact.links} />
       </Section>
     </React.Fragment>
   )
@@ -135,10 +135,10 @@ export const pageQuery = graphql`
         contact {
           heading
           description
-          social
-          standard {
-            phone
-            email
+          links {
+            type
+            label
+            address
           }
           image {
             childImageSharp {

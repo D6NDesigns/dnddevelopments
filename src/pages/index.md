@@ -131,12 +131,21 @@ contact:
   description: Contact D&D.
   heading: Contact
   image: /img/about-danny-hayes.jpg
-  social:
-    - facebook
-    - twitter
-    - instagram
-  standard:
-    - email: contact@dand.dev
-      phone: 07528 197478
+  links:
+    - type: 'standard'
+      label: 'Phone'
+      address: '07528 197478'
+    - type: 'standard'
+      label: 'Email'
+      address: 'contact@dand.dev'
+    - type: 'social'
+      label: 'Facebook'
+      address: 'facebook'
+    - type: 'social'
+      label: 'Twitter'
+      address: 'twitter'
+    - type: 'social'
+      label: 'Instagram'
+      address: 'instagram'
 ---
 
