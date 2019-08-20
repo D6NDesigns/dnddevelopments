@@ -1,11 +1,33 @@
 import React from 'react';
 import { navigate } from 'gatsby-link';
 import PropTypes from 'prop-types';
+import emailIcon from '../../img/icons/email-icon.svg';
+import facebookIcon from '../../img/icons/facebook-icon.svg';
+import instagramIcon from '../../img/icons/instagram-icon.svg';
+import phoneIcon from '../../img/icons/phone-icon.svg';
+import twitterIcon from '../../img/icons/twitter-icon.svg';
 
 function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
+}
+
+function handleContactIcon(contact) {
+  switch(contact) {
+    case 'Email':
+      return emailIcon;
+    case 'Facebook':
+      return facebookIcon;
+    case 'Phone':
+      return phoneIcon;
+    case 'Instagram':
+      return instagramIcon;
+    case 'Twitter':
+      return twitterIcon;
+    default:
+      break;
+  }
 }
 
 export default class Contact extends React.Component {
@@ -37,21 +59,54 @@ export default class Contact extends React.Component {
 
   render() {
     const { links } = this.props;
-    console.log(links);
     return (
       <div className="row">
         <div className="col-md-6">
         {links.map(function(link, index){
           if(link.type === 'standard'){
             return (
-              <div key={index}>
-                <h4>{link.label}</h4>
-                <p className="text-muted"><a href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}>{link.address}</a></p>
-              </div>
+                <p 
+                  className="text-muted"
+                  key={index}
+                >
+                  <a
+                    className={`dnd-contact-icon-link dnd-${link.label.toLowerCase()}-icon`}
+                    href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
+                  >
+                  <img 
+                    alt={link.label} 
+                    className="dnd-contact-icon" 
+                    src={handleContactIcon(link.label)} 
+                  /> 
+                  {link.address}
+                  </a>
+                </p>
             );
           }
           return null;
         })}
+          <p className="col-xs-12">
+          {links.map(function(link, index){
+            if(link.type === 'social'){
+              return (
+                <a 
+                  className={`dnd-contact-icon-link dnd-${link.label.toLowerCase()}-icon`}
+                  href={link.address}
+                  key={index} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img 
+                    alt={link.label} 
+                    className="dnd-contact-icon" 
+                    src={handleContactIcon(link.label)} 
+                  />
+                </a>
+              );
+            }
+            return null;
+          })}
+          </p>
         </div>
         <div className="col-md-6">
           <form
@@ -129,18 +184,6 @@ export default class Contact extends React.Component {
               Send Message
             </button>
           </form>
-        </div>
-        <div className="col-md-12 text-center">
-          {links.map(function(link, index){
-            if(link.type === 'social'){
-              return (
-                <span key={index}>
-                  {link.label}
-                </span>
-              );
-            }
-            return null;
-          })}
         </div>
       </div>
     )

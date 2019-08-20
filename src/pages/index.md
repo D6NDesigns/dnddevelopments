@@ -134,18 +134,18 @@ contact:
   links:
     - type: 'standard'
       label: 'Phone'
-      address: '07528 197478'
+      address: '07975 688090'
     - type: 'standard'
       label: 'Email'
       address: 'contact@dand.dev'
     - type: 'social'
       label: 'Facebook'
-      address: 'facebook'
+      address: 'http://facebook.com'
     - type: 'social'
       label: 'Twitter'
-      address: 'twitter'
+      address: 'http://twitter.com'
     - type: 'social'
       label: 'Instagram'
-      address: 'instagram'
+      address: 'http://instagram.com'
 ---
 

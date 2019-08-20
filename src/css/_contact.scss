@@ -5,13 +5,49 @@
   background-repeat: no-repeat;
   background-position: center;
   color: #6c757d;
-
+  .section-heading {
+    color: $white;
+  }
+  .section-subheading {
+    margin-bottom: 15px;
+    @media (min-width: 768px) {
+      margin-bottom: 75px;
+    }
+  }
   div[class^="col-"]{
     background-color: rgba($dnd-grey,0.64);
   }
+  .dnd-contact-icon-link {
+    display: inline-block;
+    &:nth-child(1), &:nth-child(2) {
+      > .dnd-contact-icon {
+        margin-right: 20px;
+      }
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+    &.dnd-facebook-icon,
+    &.dnd-twitter-icon,
+    &.dnd-instagram-icon {
+      margin-right: 42px;
+      > .dnd-contact-icon {
+        margin-right: 0;
+      }
+    }
+  }
+  .dnd-contact-icon-link,.dnd-contact-icon {
+    vertical-align: middle;
+    height: 42px;
+  }
+  .text-muted {
+    @media (min-width: 768px) {
+      margin: 30px 0 65px 0;
 
-  .section-heading {
-    color: $white;
+      &:last-of-type {
+        margin-bottom: 72px;
+      }
+    }
   }
   .form-group {
     margin-bottom: 25px;
