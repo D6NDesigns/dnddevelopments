@@ -29,7 +29,7 @@ export const IndexPageTemplate = ({
         <About team={about.team} />
       </Section>
       <Section {...contact}>
-        <Contact links={contact.links} />
+        <Contact {...contact} />
       </Section>
     </React.Fragment>
   )
@@ -139,13 +139,6 @@ export const pageQuery = graphql`
             type
             label
             address
-          }
-          image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
           }
         },
       }
