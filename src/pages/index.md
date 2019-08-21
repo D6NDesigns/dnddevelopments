@@ -132,20 +132,20 @@ contact:
   heading: Contact
   image: /img/about-danny-hayes.jpg
   links:
-    - type: 'standard'
-      label: 'Phone'
-      address: '07975 688090'
-    - type: 'standard'
-      label: 'Email'
-      address: 'contact@dand.dev'
-    - type: 'social'
-      label: 'Facebook'
-      address: 'http://facebook.com'
-    - type: 'social'
-      label: 'Twitter'
-      address: 'http://twitter.com'
-    - type: 'social'
-      label: 'Instagram'
-      address: 'http://instagram.com'
+    - Address: 07975 688090
+      label: Phone
+      type: standard
+    - Address: contact@dand.dev
+      label: Email
+      type: standard
+    - Address: 'http://facebook.com'
+      label: Facebook
+      type: social
+    - Address: 'http://twitter.com'
+      label: Twitter
+      type: social
+    - Address: 'http://instagram.com'
+      label: Instagram
+      type: social
 ---
 
