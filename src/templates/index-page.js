@@ -135,6 +135,13 @@ export const pageQuery = graphql`
         contact {
           heading
           description
+          background {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           links {
             type
             label

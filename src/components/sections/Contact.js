@@ -85,28 +85,26 @@ export default class Contact extends React.Component {
           }
           return null;
         })}
-          <p className="col-xs-12">
-          {links && links.map(function(link, index){
-            if(link.type === 'social'){
-              return (
-                <a 
-                  className={`dnd-contact-icon-link dnd-${link.label.toLowerCase()}-icon`}
-                  href={link.address}
-                  key={index} 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img 
-                    alt={link.label} 
-                    className="dnd-contact-icon" 
-                    src={handleContactIcon(link.label)} 
-                  />
-                </a>
-              );
-            }
-            return null;
-          })}
-          </p>
+        {links && links.map(function(link, index){
+          if(link.type === 'social'){
+            return (
+              <a 
+                className={`dnd-contact-icon-link dnd-${link.label.toLowerCase()}-icon`}
+                href={link.address}
+                key={index} 
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img 
+                  alt={link.label} 
+                  className="dnd-contact-icon" 
+                  src={handleContactIcon(link.label)} 
+                />
+              </a>
+            );
+          }
+          return null;
+        })}
         </div>
         <div className="col-md-6">
           <form

@@ -3,10 +3,18 @@ import PropTypes from 'prop-types';
 
 const Section = class extends React.Component {
   render() {
-    const { heading, description } = this.props;
+    const { background, description, heading } = this.props;
     const id = heading ? heading.toLowerCase() : '';
     return (
-      <section id={id} className={`dnd-${id} dnd-branding dnd-section`}>
+      <section 
+        id={id} 
+        className={`dnd-${id} dnd-branding dnd-section`}
+        style={{
+          backgroundImage: background ? `url(${
+            !!background.childImageSharp ? background.childImageSharp.fluid.src : background
+          })` : null
+        }}
+      >
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">

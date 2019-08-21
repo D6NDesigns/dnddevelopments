@@ -1,21 +1,55 @@
 // Styling for the contact section
 #contact {
   background-color: $dnd-grey;
-  // background-image: url('/img/contact-background.png');
   background-repeat: no-repeat;
-  background-position: center;
-  color: #6c757d;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #ffffff;
+  min-height: 100vh;
+  @media (max-width: 575px) {
+    padding: 101px 15px 15px 15px;
+  }
   .section-heading {
+    margin-top: 15px;
     color: $white;
   }
   .section-subheading {
     margin-bottom: 15px;
     @media (min-width: 768px) {
-      margin-bottom: 75px;
+      margin-bottom: 30px;
     }
   }
   div[class^="col-"]{
-    background-color: rgba($dnd-grey,0.64);
+    background-color: rgba($dnd-grey,0.68);
+    -webkit-transition: background-color 1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
+  }
+  .container{
+    &:hover div[class^="col-"]{
+      background-color: rgba($dnd-grey,0.88);
+    }
+    .row:nth-child(1) {
+      margin-bottom: 1px;
+    }
+
+    .row:nth-child(2) {
+      .col-md-6{
+        padding: 15px;
+        @media (min-width: 768px) {
+          flex: 0 0 calc(50% - 0.5px);
+          max-width: calc(50% - 0.5px);
+        }
+        @media (min-width: 768px) {
+          &:first-of-type {
+            margin-right: 1px;
+          }
+        }
+      }
+    }
   }
   .dnd-contact-icon-link {
     display: inline-block;
@@ -40,7 +74,7 @@
     vertical-align: middle;
     height: 42px;
   }
-  .text-muted {
+  .text-muted:not(.section-subheading) {
     @media (min-width: 768px) {
       margin: 30px 0 65px 0;
 
@@ -54,6 +88,7 @@
     input,
     textarea {
       padding: 12px;
+      color: $dnd-grey;
     }
     input.form-control {
       height: auto;

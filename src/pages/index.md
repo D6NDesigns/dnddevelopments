@@ -130,21 +130,21 @@ about:
 contact:
   description: Contact D&D.
   heading: Contact
-  image: /img/about-danny-hayes.jpg
+  background: /img/contact-background.jpg
   links:
-    - Address: 07975 688090
+    - address: 07975 688090
       label: Phone
       type: standard
-    - Address: contact@dand.dev
+    - address: contact@dand.dev
       label: Email
       type: standard
-    - Address: 'http://facebook.com'
+    - address: 'http://facebook.com'
       label: Facebook
       type: social
-    - Address: 'http://twitter.com'
+    - address: 'http://twitter.com'
       label: Twitter
       type: social
-    - Address: 'http://instagram.com'
+    - address: 'http://instagram.com'
       label: Instagram
       type: social
 ---
