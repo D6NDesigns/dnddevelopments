@@ -62,31 +62,31 @@ export default class Contact extends React.Component {
     return (
       <div className="row">
         <div className="col-md-6">
-        {links.map(function(link, index){
+        {links && links.map(function(link, index){
           if(link.type === 'standard'){
             return (
-                <p 
-                  className="text-muted"
-                  key={index}
+              <p 
+                className="text-muted"
+                key={index}
+              >
+                <a
+                  className={`dnd-contact-icon-link dnd-${link.label.toLowerCase()}-icon`}
+                  href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
                 >
-                  <a
-                    className={`dnd-contact-icon-link dnd-${link.label.toLowerCase()}-icon`}
-                    href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
-                  >
-                  <img 
-                    alt={link.label} 
-                    className="dnd-contact-icon" 
-                    src={handleContactIcon(link.label)} 
-                  /> 
-                  {link.address}
-                  </a>
-                </p>
+                <img 
+                  alt={link.label} 
+                  className="dnd-contact-icon" 
+                  src={handleContactIcon(link.label)} 
+                /> 
+                {link.address}
+                </a>
+              </p>
             );
           }
           return null;
         })}
           <p className="col-xs-12">
-          {links.map(function(link, index){
+          {links && links.map(function(link, index){
             if(link.type === 'social'){
               return (
                 <a 
