@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Section = class extends React.Component {
   render() {
     const { heading, description } = this.props;
-    const id = heading.toLowerCase();
+    const id = heading ? heading.toLowerCase() : '';
     return (
       <section id={id} className={`dnd-${id} dnd-branding dnd-section`}>
         <div className="container">
