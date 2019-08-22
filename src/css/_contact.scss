@@ -53,6 +53,15 @@
       margin-top: 1px;
     }
   }
+  .dnd-contact-link {
+    color: #ffffff;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: darken($primary, 7.5%);
+    }
+  }
   .dnd-contact-icon-container {
     display: inline-block;
     height: 42px;
@@ -62,6 +71,10 @@
     position: relative;
     text-align: center;
     line-height: 36px;
+    -webkit-transition: background-color 1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
 
     &:active,
     &:focus,
@@ -141,5 +154,30 @@
     font-weight: 700;
     color: $gray-400;
     @include heading-font;
+  }
+  .dnd-contact-logo {
+    display: inline-block;
+    height: 44px;
+    width: 44px;
+    background-image: url('../img/logo.svg');
+    background-size: 85px 85px;
+    background-position: -20px 6px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    position: relative;
+    top: -11px;
+    -webkit-transition: opacity 1s ease-out;
+    -moz-transition: opacity 1s ease-out;
+    -o-transition: opacity 1s ease-out;
+    transition: opacity 1s ease-out;
+    &:hover {
+      opacity: 0.3;
+    }
+  }
+  .btn-primary {
+    @media (max-width: 767px) {
+      display: block;
+      width: 100%;
+    }
   }
 }

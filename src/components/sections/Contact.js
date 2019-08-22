@@ -82,7 +82,7 @@ export default class Contact extends React.Component {
                     /> 
                   </a>
                   <a
-                    className={`dnd-contact-icon-link dnd-${link.label.toLowerCase()}-icon`}
+                    className={`dnd-contact-link dnd-${link.label.toLowerCase()}-icon`}
                     href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
                   >
                     {link.address}
@@ -193,16 +193,15 @@ export default class Contact extends React.Component {
         </div>
         <div className="row">
           <div className="col-sm-12 text-center">
-
             <Link 
               duration={350}
               spy={true}
               smooth={true}
               to="intro"
+              className="dnd-contact-logo text-hide"
             >
-              Back to top
+              Back To Top
             </Link>
-
           </div>
         </div>
       </React.Fragment>
