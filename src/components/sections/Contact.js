@@ -6,6 +6,7 @@ import facebookIcon from '../../img/icons/facebook-icon.svg';
 import instagramIcon from '../../img/icons/instagram-icon.svg';
 import phoneIcon from '../../img/icons/phone-icon.svg';
 import twitterIcon from '../../img/icons/twitter-icon.svg';
+import { Link } from 'react-scroll';
 
 function encode(data) {
   return Object.keys(data)
@@ -60,130 +61,151 @@ export default class Contact extends React.Component {
   render() {
     const { links } = this.props;
     return (
-      <div className="row">
-        <div className="col-md-6">
-        {links && links.map(function(link, index){
-          if(link.type === 'standard'){
-            return (
-              <p 
-                className="text-muted"
-                key={index}
-              >
-                <a
-                  className={`dnd-contact-icon-link dnd-${link.label.toLowerCase()}-icon`}
-                  href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
+      <React.Fragment>
+        <div className="row">
+          <div className="col-md-6">
+          {links && links.map(function(link, index){
+            if(link.type === 'standard'){
+              return (
+                <p 
+                  className="text-muted"
+                  key={index}
                 >
-                <img 
-                  alt={link.label} 
-                  className="dnd-contact-icon" 
-                  src={handleContactIcon(link.label)} 
-                /> 
-                {link.address}
+                  <a
+                    className={`dnd-contact-icon-container dnd-${link.label.toLowerCase()}-icon`}
+                    href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
+                  >
+                    <img 
+                      alt={link.label} 
+                      className="dnd-contact-icon" 
+                      src={handleContactIcon(link.label)} 
+                    /> 
+                  </a>
+                  <a
+                    className={`dnd-contact-icon-link dnd-${link.label.toLowerCase()}-icon`}
+                    href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
+                  >
+                    {link.address}
+                  </a>
+                </p>
+              );
+            }
+            return null;
+          })}
+          {links && links.map(function(link, index){
+            if(link.type === 'social'){
+              return (
+                <a 
+                  className={`dnd-contact-icon-container dnd-${link.label.toLowerCase()}-icon`}
+                  href={link.address}
+                  key={index} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img 
+                    alt={link.label} 
+                    className="dnd-contact-icon" 
+                    src={handleContactIcon(link.label)} 
+                  />
                 </a>
-              </p>
-            );
-          }
-          return null;
-        })}
-        {links && links.map(function(link, index){
-          if(link.type === 'social'){
-            return (
-              <a 
-                className={`dnd-contact-icon-link dnd-${link.label.toLowerCase()}-icon`}
-                href={link.address}
-                key={index} 
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img 
-                  alt={link.label} 
-                  className="dnd-contact-icon" 
-                  src={handleContactIcon(link.label)} 
+              );
+            }
+            return null;
+          })}
+          </div>
+          <div className="col-md-6">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+              <input type="hidden" name="form-name" value="contact" />
+              <div hidden>
+                <label>
+                  Don’t fill this out:{' '}
+                  <input 
+                    name="bot-field" 
+                    onChange={this.handleChange} 
+                  />
+                </label>
+              </div>
+              <div className="form-group">
+                <label className="label" htmlFor={'name'}>
+                  Your name
+                </label>
+                <input
+                  className="form-control"
+                  type={'text'}
+                  name={'name'}
+                  onChange={this.handleChange}
+                  id={'name'}
+                  required={true}
                 />
-              </a>
-            );
-          }
-          return null;
-        })}
-        </div>
-        <div className="col-md-6">
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-          >
-            {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-            <input type="hidden" name="form-name" value="contact" />
-            <div hidden>
-              <label>
-                Don’t fill this out:{' '}
-                <input 
-                  name="bot-field" 
-                  onChange={this.handleChange} 
+              </div>
+              <div className="form-group">
+                <label className="label" htmlFor={'phone'}>
+                  Your phone number
+                </label>
+                <input
+                  className="form-control"
+                  type={'phone'}
+                  name={'phone'}
+                  onChange={this.handleChange}
+                  id={'phone'}
+                  required={true}
                 />
-              </label>
-            </div>
-            <div className="form-group">
-              <label className="label" htmlFor={'name'}>
-                Your name
-              </label>
-              <input
-                className="form-control"
-                type={'text'}
-                name={'name'}
-                onChange={this.handleChange}
-                id={'name'}
-                required={true}
-              />
-            </div>
-            <div className="form-group">
-              <label className="label" htmlFor={'phone'}>
-                Your phone number
-              </label>
-              <input
-                className="form-control"
-                type={'phone'}
-                name={'phone'}
-                onChange={this.handleChange}
-                id={'phone'}
-                required={true}
-              />
-            </div>
-            <div className="form-group">
-              <label className="label" htmlFor={'email'}>
-                Your email address
-              </label>
-              <input
-                className="form-control"
-                type={'email'}
-                name={'email'}
-                onChange={this.handleChange}
-                id={'email'}
-                required={true}
-              />
-            </div>
-            <div className="form-group">
-              <label className="label" htmlFor={'message'}>
-                Your message
-              </label>
-              <textarea
-                className="form-control"
-                name={'message'}
-                onChange={this.handleChange}
-                id={'message'}
-                required={true}
-              />
-            </div>
-            <div className="form-group">
-              <div data-netlify-recaptcha="true" />
-            </div>
-            <button className="btn btn-primary text-uppercase" type="submit">
-              Send Message
-            </button>
-          </form>
+              </div>
+              <div className="form-group">
+                <label className="label" htmlFor={'email'}>
+                  Your email address
+                </label>
+                <input
+                  className="form-control"
+                  type={'email'}
+                  name={'email'}
+                  onChange={this.handleChange}
+                  id={'email'}
+                  required={true}
+                />
+              </div>
+              <div className="form-group">
+                <label className="label" htmlFor={'message'}>
+                  Your message
+                </label>
+                <textarea
+                  className="form-control"
+                  name={'message'}
+                  onChange={this.handleChange}
+                  id={'message'}
+                  required={true}
+                />
+              </div>
+              <div className="form-group">
+                <div data-netlify-recaptcha="true" />
+              </div>
+              <button className="btn btn-primary text-uppercase" type="submit">
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
+        <div className="row">
+          <div className="col-sm-12 text-center">
+
+            <Link 
+              duration={350}
+              spy={true}
+              smooth={true}
+              to="intro"
+            >
+              Back to top
+            </Link>
+
+          </div>
+        </div>
+      </React.Fragment>
     )
   }
 };
