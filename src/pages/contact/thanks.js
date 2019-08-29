@@ -1,9 +1,10 @@
-import React from 'react'
-import Layout from '../../components/Layout'
+import React from 'react';
+import Layout from '../../components/Layout';
+import '../../css/dnddevelopments.scss';
 
 export default () => (
   <Layout>
-    <section className="section">
+    <section id="thanks" className="dnd-thanks dnd-branding dnd-section">
       <div className="container">
         <div className="content">
           <h1>Thank you!</h1>
