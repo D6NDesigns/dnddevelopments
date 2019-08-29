@@ -59,61 +59,70 @@ export default class Contact extends React.Component {
   }
 
   render() {
-    const { links } = this.props;
+    const { heading, description, links } = this.props;
     return (
       <React.Fragment>
         <div className="row">
-          <div className="col-md-6">
-          {links && links.map(function(link, index){
-            if(link.type === 'standard'){
+          <div className="dnd-contact-left col-md-5 col-lg-3">
+            <h2 className="section-heading text-uppercase">{heading}</h2>
+            <h3 className="section-subheading text-muted">{description}</h3>
+            {links && links.map(function(link, index){
+              if(link.type === 'standard'){
+                return (
+                  <p
+                    className="dnd-contact-link-container text-muted"
+                    key={index}
+                  >
+                    <a
+                      className={`dnd-contact-icon-container dnd-${link.label.toLowerCase()}-icon`}
+                      href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
+                    >
+                      <img 
+                        alt={link.label} 
+                        className="dnd-contact-icon" 
+                        src={handleContactIcon(link.label)} 
+                      /> 
+                    </a>
+                    <a
+                      className={`dnd-contact-link dnd-${link.label.toLowerCase()}-icon`}
+                      href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
+                    >
+                      {link.address}
+                    </a>
+                  </p>
+                );
+              }
               return (
-                <p 
-                  className="text-muted"
+                <p
+                  className="dnd-contact-link-container text-muted"
                   key={index}
                 >
-                  <a
+                  <a 
                     className={`dnd-contact-icon-container dnd-${link.label.toLowerCase()}-icon`}
-                    href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
+                    href={link.address}
+                    key={index} 
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img 
                       alt={link.label} 
                       className="dnd-contact-icon" 
                       src={handleContactIcon(link.label)} 
-                    /> 
+                    />
                   </a>
                   <a
                     className={`dnd-contact-link dnd-${link.label.toLowerCase()}-icon`}
                     href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
                   >
-                    {link.address}
+                    {link.address.replace('http://','')}
                   </a>
                 </p>
               );
             }
-            return null;
-          })}
-          {links && links.map(function(link, index){
-            if(link.type === 'social'){
-              return (
-                <a 
-                  className={`dnd-contact-icon-container dnd-${link.label.toLowerCase()}-icon`}
-                  href={link.address}
-                  key={index} 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img 
-                    alt={link.label} 
-                    className="dnd-contact-icon" 
-                    src={handleContactIcon(link.label)} 
-                  />
-                </a>
-              );
-            }
-            return null;
-          })}
+          )}
           </div>
-          <div className="col-md-6">
+          <div className="dnd-contact-right col-md-7 col-lg-9">
+            <h4>Send Message</h4>
             <form
               name="contact"
               method="POST"
@@ -141,19 +150,6 @@ export default class Contact extends React.Component {
                   name={'name'}
                   onChange={this.handleChange}
                   id={'name'}
-                  required={true}
-                />
-              </div>
-              <div className="form-group">
-                <label className="label" htmlFor={'phone'}>
-                  Your phone number
-                </label>
-                <input
-                  className="form-control"
-                  type={'phone'}
-                  name={'phone'}
-                  onChange={this.handleChange}
-                  id={'phone'}
                   required={true}
                 />
               </div>
@@ -189,19 +185,19 @@ export default class Contact extends React.Component {
                 Send Message
               </button>
             </form>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-sm-12 text-center">
-            <Link 
-              duration={350}
-              spy={true}
-              smooth={true}
-              to="intro"
-              className="dnd-contact-logo text-hide"
-            >
-              Back To Top
-            </Link>
+            <div className="row">
+              <div className="dnd-contact-bottom col-sm-12 text-center">
+                <Link 
+                  duration={350}
+                  spy={true}
+                  smooth={true}
+                  to="intro"
+                  className="dnd-contact-logo text-hide"
+                >
+                  Back To Top
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </React.Fragment>
