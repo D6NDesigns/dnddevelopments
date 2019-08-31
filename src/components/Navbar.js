@@ -16,18 +16,18 @@ const Navbar = class extends React.Component {
   }
 
   componentDidMount = () => {
-    window.addEventListener('scroll', this.handleScroll);
-    window.addEventListener('touchmove', this.handleScroll);
+    document.addEventListener('touchmove', this.handleScroll);
+    document.addEventListener('scroll', this.handleScroll);
   };
 
   componentWillUnmount = () => {
-    window.removeEventListener('scroll', this.handleScroll);
-    window.removeEventListener('touchmove', this.handleScroll);
+    document.removeEventListener('touchmove', this.handleScroll);
+    document.removeEventListener('scroll', this.handleScroll);
   };
 
   handleScroll = (event) => {
     let scrollTop = event.srcElement.documentElement.scrollTop;
-    let breakpoint = window.innerWidth >= 768 ? 300 : 150;
+    let breakpoint = window.innerWidth >= 768 ? 190 : 150;
     this.setState({
       navBarBackgroundClass: scrollTop >= parseInt(breakpoint) ? 'dnd-nav-has-background' : '',
     });
