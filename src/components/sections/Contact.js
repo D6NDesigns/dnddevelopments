@@ -112,7 +112,7 @@ export default class Contact extends React.Component {
                   </a>
                   <a
                     className={`dnd-contact-link dnd-${link.label.toLowerCase()}-icon`}
-                    href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
+                    href={link.address}
                   >
                     {link.address.replace('http://','')}
                   </a>
