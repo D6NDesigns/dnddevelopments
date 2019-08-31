@@ -1,11 +1,15 @@
 #contact {
   background-color: $dnd-grey;
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-position: center center;
   background-size: cover;
-  background-attachment: fixed;
   min-height: 100vh;
+  
+  @supports (-webkit-overflow-scrolling: touch) {
+    background-attachment: scroll; 
+  }
+
   @media (max-width: 575px) {
     padding: 101px 15px 15px 15px;
   }

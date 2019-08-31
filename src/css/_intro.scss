@@ -2,13 +2,15 @@
 .dnd-intro {
   text-align: center;
   color: white;
-  // background-image: url('../img/header-bg.jpg');
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-position: center center;
   background-size: cover;
-  background-attachment: fixed;
   min-height: 100vh;
+
+  @supports (-webkit-overflow-scrolling: touch) {
+    background-attachment: scroll; 
+  }
 
   .container {
     padding: 0 70px;
