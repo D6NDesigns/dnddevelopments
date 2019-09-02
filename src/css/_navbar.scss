@@ -18,6 +18,10 @@
     background-color: transparent !important;
     @include heading-font;
 
+    @supports (-webkit-overflow-scrolling: touch) {
+      background-color: $dnd-grey !important;
+    }
+
     &:focus {
       &, img {
         outline: 0;
