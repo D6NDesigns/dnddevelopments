@@ -19,11 +19,7 @@ services:
       heading: Extensions
       image: /img/extensions-icon.svg
     - description: >-
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Quisque hendrerit enim eu rutrum blandit.
-        Aliquam erat volutpat. Nulla nibh enim, sodales eu purus quis, tempus
-        porta leo. In eleifend nunc vitae ligula congue, at vestibulum turpis
-        dapibus.
+        Offering professional refurbishments for domestic and commercial customers, our renovation specialists cater for an array of homes and public houses. As a team of highly skilled builders, we are able to provide a partial or complete renovation based on your needs. Whether it's an extension or a conversion, we're able to transform the look of your home or business to add style and elegance.
       heading: Renovations
       image: /img/renovations-icon.svg
     - description: >-
@@ -121,9 +117,8 @@ about:
       info:
         - 12 years experience in the Building Trade
         - NVQ Level 3 Bricklaying
-        - Loves to stay at the YMCA
       name: Danny Hayes
-    - image: /img/about-danny-hayes.jpg
+    - image: /img/about-darren-tudgay.jpg
       info:
         - 20 years experience in the Building Trade
       name: Darren Tudgay
