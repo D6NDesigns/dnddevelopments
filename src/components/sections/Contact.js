@@ -62,140 +62,142 @@ export default class Contact extends React.Component {
     const { heading, description, links } = this.props;
     return (
       <React.Fragment>
-        <div className="row">
-          <div className="dnd-contact-left col-md-5 col-lg-3">
-            <h2 className="section-heading text-uppercase">{heading}</h2>
-            <h3 className="section-subheading text-muted">{description}</h3>
-            {links && links.map(function(link, index){
-              if(link.type === 'standard'){
+        <div className="row justify-content-center">
+          <div class="col-sm-12 col-md-8">
+            <div className="dnd-contact-left d-block col-sm-12">
+              <h2 className="section-heading text-uppercase">{heading}</h2>
+              <h3 className="section-subheading text-muted">{description}</h3>
+              {links && links.map(function(link, index){
+                if(link.type === 'standard'){
+                  return (
+                    <p
+                      className="dnd-contact-link-container text-muted"
+                      key={index}
+                    >
+                      <a
+                        className={`dnd-contact-icon-container dnd-${link.label.toLowerCase()}-icon`}
+                        href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
+                      >
+                        <img 
+                          alt={link.label} 
+                          className="dnd-contact-icon" 
+                          src={handleContactIcon(link.label)} 
+                        /> 
+                      </a>
+                      {/* <a
+                        className={`dnd-contact-link dnd-${link.label.toLowerCase()}-icon`}
+                        href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
+                      >
+                        {link.address}
+                      </a> */}
+                    </p>
+                  );
+                }
                 return (
                   <p
                     className="dnd-contact-link-container text-muted"
                     key={index}
                   >
-                    <a
+                    <a 
                       className={`dnd-contact-icon-container dnd-${link.label.toLowerCase()}-icon`}
-                      href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
+                      href={link.address}
+                      key={index} 
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <img 
                         alt={link.label} 
                         className="dnd-contact-icon" 
                         src={handleContactIcon(link.label)} 
-                      /> 
+                      />
                     </a>
-                    <a
+                    {/* <a
                       className={`dnd-contact-link dnd-${link.label.toLowerCase()}-icon`}
-                      href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
+                      href={link.address}
                     >
-                      {link.address}
-                    </a>
+                      {link.address.replace('http://','')}
+                    </a> */}
                   </p>
                 );
               }
-              return (
-                <p
-                  className="dnd-contact-link-container text-muted"
-                  key={index}
-                >
-                  <a 
-                    className={`dnd-contact-icon-container dnd-${link.label.toLowerCase()}-icon`}
-                    href={link.address}
-                    key={index} 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img 
-                      alt={link.label} 
-                      className="dnd-contact-icon" 
-                      src={handleContactIcon(link.label)} 
+            )}
+            </div>
+            <div className="dnd-contact-right d-block col-sm-12">
+              <h4>Send Message</h4>
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+              >
+                {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                <input type="hidden" name="form-name" value="contact" />
+                <div hidden>
+                  <label>
+                    Don’t fill this out:{' '}
+                    <input 
+                      name="bot-field" 
+                      onChange={this.handleChange} 
                     />
-                  </a>
-                  <a
-                    className={`dnd-contact-link dnd-${link.label.toLowerCase()}-icon`}
-                    href={link.address}
-                  >
-                    {link.address.replace('http://','')}
-                  </a>
-                </p>
-              );
-            }
-          )}
-          </div>
-          <div className="dnd-contact-right col-md-7 col-lg-9">
-            <h4>Send Message</h4>
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-            >
-              {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-              <input type="hidden" name="form-name" value="contact" />
-              <div hidden>
-                <label>
-                  Don’t fill this out:{' '}
-                  <input 
-                    name="bot-field" 
-                    onChange={this.handleChange} 
+                  </label>
+                </div>
+                <div className="form-group">
+                  <label className="label" htmlFor={'name'}>
+                    Your name
+                  </label>
+                  <input
+                    className="form-control"
+                    type={'text'}
+                    name={'name'}
+                    onChange={this.handleChange}
+                    id={'name'}
+                    required={true}
                   />
-                </label>
-              </div>
-              <div className="form-group">
-                <label className="label" htmlFor={'name'}>
-                  Your name
-                </label>
-                <input
-                  className="form-control"
-                  type={'text'}
-                  name={'name'}
-                  onChange={this.handleChange}
-                  id={'name'}
-                  required={true}
-                />
-              </div>
-              <div className="form-group">
-                <label className="label" htmlFor={'email'}>
-                  Your email address
-                </label>
-                <input
-                  className="form-control"
-                  type={'email'}
-                  name={'email'}
-                  onChange={this.handleChange}
-                  id={'email'}
-                  required={true}
-                />
-              </div>
-              <div className="form-group">
-                <label className="label" htmlFor={'message'}>
-                  Your message
-                </label>
-                <textarea
-                  className="form-control"
-                  name={'message'}
-                  onChange={this.handleChange}
-                  id={'message'}
-                  required={true}
-                />
-              </div>
-              <div className="form-group">
-                <div data-netlify-recaptcha="true" />
-              </div>
-              <button className="btn btn-primary text-uppercase" type="submit">
-                Send Message
-              </button>
-            </form>
-            <div className="row">
-              <div className="dnd-contact-bottom col-sm-12 text-center">
-                <Link 
-                  duration={350}
-                  spy={true}
-                  smooth={true}
-                  to="intro"
-                  className="dnd-contact-logo text-hide"
-                >
-                  Back To Top
-                </Link>
+                </div>
+                <div className="form-group">
+                  <label className="label" htmlFor={'email'}>
+                    Your email address
+                  </label>
+                  <input
+                    className="form-control"
+                    type={'email'}
+                    name={'email'}
+                    onChange={this.handleChange}
+                    id={'email'}
+                    required={true}
+                  />
+                </div>
+                <div className="form-group">
+                  <label className="label" htmlFor={'message'}>
+                    Your message
+                  </label>
+                  <textarea
+                    className="form-control"
+                    name={'message'}
+                    onChange={this.handleChange}
+                    id={'message'}
+                    required={true}
+                  />
+                </div>
+                <div className="form-group">
+                  <div data-netlify-recaptcha="true" />
+                </div>
+                <button className="btn btn-primary text-uppercase" type="submit">
+                  Send Message
+                </button>
+              </form>
+              <div className="row">
+                <div className="dnd-contact-bottom col-sm-12 text-center">
+                  <Link 
+                    duration={350}
+                    spy={true}
+                    smooth={true}
+                    to="intro"
+                    className="dnd-contact-logo text-hide"
+                  >
+                    Back To Top
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

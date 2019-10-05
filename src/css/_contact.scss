@@ -24,9 +24,6 @@
     background-color: $dnd-grey;
     color: white;
     text-align: center;
-    @media (min-width: 768px) {
-      text-align: left;
-    }
   }
   .dnd-contact-right {
     padding: 15px 15px 0 15px;
@@ -41,9 +38,6 @@
   }
   .dnd-contact-link-container {
     display: inline;
-    @media (min-width: 768px) {
-      display: block;
-    }
     .dnd-contact-link {
       color: #ffffff;
       display: none;

@@ -130,16 +130,10 @@ contact:
     - address: 07975 688090
       label: Phone
       type: standard
-    - address: contact@dand.dev
+    - address: contact@dnddevelopments.co.uk
       label: Email
       type: standard
-    - address: 'http://facebook.com'
-      label: Facebook
-      type: social
-    - address: 'http://twitter.com'
-      label: Twitter
-      type: social
-    - address: 'http://instagram.com'
+    - address: 'http://instagram.com/dnddevelopments'
       label: Instagram
       type: social
 ---

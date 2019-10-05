@@ -6,6 +6,7 @@
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
+  background-color: $dnd-grey;
   min-height: 100vh;
 
   @supports (-webkit-overflow-scrolling: touch) {
