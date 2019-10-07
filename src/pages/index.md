@@ -130,7 +130,7 @@ contact:
     - address: 07975 688090
       label: Phone
       type: standard
-    - address: contact@dnddevelopments.co.uk
+    - address: dnddevelopments@yahoo.com
       label: Email
       type: standard
     - address: 'http://instagram.com/dnddevelopments'
