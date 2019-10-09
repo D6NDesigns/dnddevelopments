@@ -110,8 +110,8 @@ portfolio:
       services:
         - Extensions
 about:
-  description: About D&D.
   heading: About
+  description: D&D Developments are midlands based high end builders with over 20 years experience, specialising in full property Renovations, Extensions, Repairs and general building work.
   team:
     - image: /img/about-danny-hayes.jpg
       info:
@@ -133,7 +133,10 @@ contact:
     - address: dnddevelopments@yahoo.com
       label: Email
       type: standard
-    - address: 'http://instagram.com/dnddevelopments'
+    - address: 'https://facebook.com/dnddevelopmentsuk'
+      label: Facebook
+      type: social
+    - address: 'https://instagram.com/dnddevelopments'
       label: Instagram
       type: social
 ---
