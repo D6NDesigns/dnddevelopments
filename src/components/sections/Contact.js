@@ -63,7 +63,7 @@ export default class Contact extends React.Component {
     return (
       <React.Fragment>
         <div className="row justify-content-center">
-          <div class="col-sm-12 col-md-8">
+          <div className="col-sm-12 col-md-8">
             <div className="dnd-contact-left d-block col-sm-12">
               <h2 className="section-heading text-uppercase">{heading}</h2>
               <h3 className="section-subheading text-muted">{description}</h3>
