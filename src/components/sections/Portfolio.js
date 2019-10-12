@@ -81,9 +81,9 @@ class Portfolio extends Component {
                       <Flickity
                         className={''} // default ''
                         elementType={'div'} // default 'div'
-                        disableImagesLoaded={true} // default false
+                        disableImagesLoaded={false} // default false
                         reloadOnUpdate={false}
-                        static={true}
+                        static
                       >
                       {
                         this.state.job.images.map((image,index) => (
