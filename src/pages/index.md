@@ -43,6 +43,19 @@ portfolio:
   heading: Portfolio
   jobs:
     - images:
+          - image: /img/portfolio-mansfield-1.jpg
+          - image: /img/portfolio-mansfield-2.jpg
+          - image: /img/portfolio-mansfield-3.jpg
+          - image: /img/portfolio-mansfield-4.jpg
+          - image: /img/portfolio-mansfield-5.jpg
+          - image: /img/portfolio-mansfield-6.jpg
+          - image: /img/portfolio-mansfield-7.jpg
+      location: Mansfield
+      services:
+        - Extensions
+        - Renovations
+        - Landscaping
+    - images:
         - image: /img/portfolio-aston-on-trent-1.jpg
         - image: /img/portfolio-aston-on-trent-2.jpg
         - image: /img/portfolio-aston-on-trent-3.jpg

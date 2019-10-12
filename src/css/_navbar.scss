@@ -5,6 +5,10 @@
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 
+  @supports (-webkit-overflow-scrolling: touch) {
+    background-color: $dnd-grey !important;
+  }
+
   .navbar-toggler {
     width: 40px;
     height: 40px;
@@ -17,10 +21,6 @@
     border: 0;
     background-color: transparent !important;
     @include heading-font;
-
-    @supports (-webkit-overflow-scrolling: touch) {
-      background-color: $dnd-grey !important;
-    }
 
     &:focus {
       &, img {

@@ -83,7 +83,7 @@ class Portfolio extends Component {
                         elementType={'div'} // default 'div'
                         disableImagesLoaded={false} // default false
                         reloadOnUpdate
-                        static
+                        static={true}
                       >
                       {
                         this.state.job.images.map((image,index) => (
