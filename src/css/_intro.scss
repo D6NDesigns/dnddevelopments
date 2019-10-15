@@ -9,11 +9,6 @@
   background-color: $dnd-grey;
   min-height: 100vh;
 
-  @supports (-webkit-overflow-scrolling: touch) {
-    background-attachment: scroll;
-    background-size: 100vh 100vh;
-  }
-
   .container {
     padding: 0 70px;
     .intro-text {
