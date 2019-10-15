@@ -4,8 +4,19 @@
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
-
+  
+  // iPhone
   @supports (-webkit-overflow-scrolling: touch) {
+    background-color: $dnd-grey !important;
+  }
+  
+  // IE10+
+  @media screen and (-ms-high-contrast: none) {
+    background-color: $dnd-grey !important;
+  }
+  
+  // EDGE
+  @supports (-ms-ime-align:auto) {
     background-color: $dnd-grey !important;
   }
 
