@@ -55,16 +55,7 @@ IndexPageTemplate.propTypes = {
 }
 
 const IndexPage = ({ data }) => {
-  const isBrowser = typeof window !== "undefined";
   const { frontmatter } = data.markdownRemark;
-
-  // if (isBrowser) {
-  //   if (/MSIE|Trident/.test(window.navigator.userAgent)) {
-  //     /* Microsoft Internet Explorer detected in. */
-  //     window.location.href = '/unsupported-browser';
-  //   }
-  // }
-
   return (
     <Layout>
       <IndexPageTemplate
