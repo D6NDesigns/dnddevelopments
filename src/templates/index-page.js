@@ -58,14 +58,12 @@ const IndexPage = ({ data }) => {
   const isBrowser = typeof window !== "undefined";
   const { frontmatter } = data.markdownRemark;
 
-  if (isBrowser) {
-    console.log('isBrowser', isBrowser);
-    console.log('test IE/TRIDENT', /MSIE|Trident/.test(window.navigator.userAgent));
-    if (/MSIE|Trident/.test(window.navigator.userAgent)) {
-      /* Microsoft Internet Explorer detected in. */
-      window.location.href = '/unsupported-browser';
-    }
-  }
+  // if (isBrowser) {
+  //   if (/MSIE|Trident/.test(window.navigator.userAgent)) {
+  //     /* Microsoft Internet Explorer detected in. */
+  //     window.location.href = '/unsupported-browser';
+  //   }
+  // }
 
   return (
     <Layout>
