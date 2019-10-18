@@ -59,6 +59,8 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   if (isBrowser) {
+    console.log('isBrowser', isBrowser);
+    console.log('test IE/TRIDENT', /MSIE|Trident/.test(window.navigator.userAgent));
     if (/MSIE|Trident/.test(window.navigator.userAgent)) {
       /* Microsoft Internet Explorer detected in. */
       window.location.href = '/unsupported-browser';
