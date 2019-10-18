@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Navbar from '../components/Navbar';
 import '../css/dnddevelopments.scss';
 import useSiteMetadata from './SiteMetadata';
 
@@ -51,7 +50,6 @@ const TemplateWrapper = ({ children }) => {
         <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css' />
 
       </Helmet>
-      <Navbar siteMetadata={siteMetadata} />
       {children}
     </React.Fragment>
   )

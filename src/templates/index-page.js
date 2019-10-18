@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
+import useSiteMetadata from '../components/SiteMetadata';
+import Navbar from '../components/Navbar';
 import Intro from '../components/sections/Intro';
 import Services from '../components/sections/Services';
 import Portfolio from '../components/sections/Portfolio';
@@ -18,6 +20,7 @@ export const IndexPageTemplate = ({
 }) => {
   return (
     <React.Fragment>
+      <Navbar siteMetadata={useSiteMetadata()} />
       <Intro {...intro} />
       <Section {...services}>
         <Services services={services.services} />
@@ -52,7 +55,17 @@ IndexPageTemplate.propTypes = {
 }
 
 const IndexPage = ({ data }) => {
+  const isBrowser = typeof window !== "undefined";
   const { frontmatter } = data.markdownRemark;
+
+  if (isBrowser) {
+    if (window.navigator.userAgent.indexOf('MSIE')!==-1 ||
+      window.navigator.appVersion.indexOf('Trident/') > -1) {
+      /* Microsoft Internet Explorer detected in. */
+      window.location.href = '/unsupported-browser';
+    }
+  }
+
   return (
     <Layout>
       <IndexPageTemplate
