@@ -179,9 +179,6 @@ export default class Contact extends React.Component {
                     required={true}
                   />
                 </div>
-                <div className="form-group">
-                  <div data-netlify-recaptcha="true" />
-                </div>
                 <button className="btn btn-primary text-uppercase" type="submit">
                   Send Message
                 </button>
