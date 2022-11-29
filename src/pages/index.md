@@ -149,7 +149,7 @@ contact:
     - address: 'https://facebook.com/dnddevelopmentsuk'
       label: Facebook
       type: social
-    - address: 'https://instagram.com/dnddevelopments'
+    - address: 'https://instagram.com/d_and_d_developments'
       label: Instagram
       type: social
 ---
