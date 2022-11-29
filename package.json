@@ -1,0 +1,29 @@
+{
+  "name": "d-and-d-developments",
+  "version": "1.0.0",
+  "private": true,
+  "description": "d-and-d-developments",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@mdx-js/react": "^2.1.5",
+    "gatsby": "^5.2.0",
+    "gatsby-plugin-image": "^3.2.0",
+    "gatsby-plugin-manifest": "^5.2.0",
+    "gatsby-plugin-mdx": "^5.2.0",
+    "gatsby-plugin-sharp": "^5.2.0",
+    "gatsby-source-filesystem": "^5.2.0",
+    "gatsby-transformer-remark": "^6.2.0",
+    "gatsby-transformer-sharp": "^5.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
