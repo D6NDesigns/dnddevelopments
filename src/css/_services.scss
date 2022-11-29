@@ -1,0 +1,27 @@
+// Styling for the services section
+.dnd-services {
+  
+  .dnd-service-icon-container {
+    display: inline-block;
+    height: 128px;
+    line-height: 115px;
+    position: relative;
+    width: 128px;
+    border-radius: 50%;
+    background-color: $primary;
+
+    .dnd-service-icon {
+      display: inline-block;
+      vertical-align: middle;
+      height: 64px;
+      line-height: normal;
+    }
+
+  }
+
+  .dnd-service-heading {
+    margin: 15px 0;
+    text-transform: none;
+  }
+
+}

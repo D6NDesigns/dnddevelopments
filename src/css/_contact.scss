@@ -1,0 +1,158 @@
+#contact {
+  background-color: $dnd-grey;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh;
+  
+  @supports (-webkit-overflow-scrolling: touch) {
+    background-attachment: scroll;
+  }
+
+  @media (max-width: 575px) {
+    padding: 101px 15px 30px 15px;
+  }
+  .section-subheading {
+    margin-bottom: 15px;
+    @media (min-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
+  .dnd-contact-left {
+    padding: 15px;
+    background-color: $dnd-grey;
+    color: white;
+    text-align: center;
+  }
+  .dnd-contact-right {
+    padding: 15px 15px 0 15px;
+    background-color: white;
+    h4 {
+      color: $dnd-grey;
+    }
+  }
+  .dnd-contact-bottom {
+    margin: 15px 0 0 0;
+    background-color: #f8f9fa;
+  }
+  .dnd-contact-link-container {
+    display: inline;
+    .dnd-contact-link {
+      color: #ffffff;
+      display: none;
+      @media (min-width: 768px) {
+        display: inline;
+      }
+      &:active,
+      &:focus,
+      &:hover {
+        color: darken($primary, 7.5%);
+      }
+    }
+    .dnd-contact-icon-container {
+      display: inline-block;
+      height: 42px;
+      width: 42px;
+      border-radius: 50%;
+      background-color: $primary;
+      position: relative;
+      text-align: center;
+      line-height: 36px;
+      -webkit-transition: background-color 1s ease-out;
+      -moz-transition: background-color 1s ease-out;
+      -o-transition: background-color 1s ease-out;
+      transition: background-color 1s ease-out;
+      margin-right: 10px;
+      @media (min-width: 768px) {
+        margin-right: 15px;
+      }
+
+      &:active,
+      &:focus,
+      &:hover {
+        background-color: darken($primary, 7.5%);
+      }
+      &:active,
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(254, 209, 55,.5);
+      }
+      .dnd-contact-icon {
+        display: inline-block;
+        vertical-align: middle;
+        height: 21px;
+        line-height: normal;
+      }
+    }
+  }
+  .form-group {
+    margin-bottom: 25px;
+    label {
+      color: $dnd-grey;
+    }
+    input,
+    textarea {
+      padding: 12px;
+      color: #6c757d;
+    }
+    input.form-control {
+      height: auto;
+    }
+    textarea.form-control {
+      resize: none;
+    }
+    .form-control {
+      font-weight: 300;
+      &:focus {
+        border-color: $primary !important;
+        box-shadow: 0 0 0 0.2rem rgba($primary,.25);
+      }
+    }
+  }
+  .btn-primary {
+    @media (max-width: 767px) {
+      display: block;
+      width: 100%;
+    }
+  }
+  ::-webkit-input-placeholder {
+    font-weight: 700;
+    color: $gray-400;
+    @include heading-font;
+  }
+  :-moz-placeholder {
+    font-weight: 700;
+    color: $gray-400;
+    @include heading-font;
+  }
+  ::-moz-placeholder {
+    font-weight: 700;
+    color: $gray-400;
+    @include heading-font;
+  }
+  :-ms-input-placeholder {
+    font-weight: 700;
+    color: $gray-400;
+    @include heading-font;
+  }
+  .dnd-contact-logo {
+    display: inline-block;
+    height: 44px;
+    width: 44px;
+    background-image: url('../img/logo.svg');
+    background-size: 85px 85px;
+    background-position: -20px 6px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    position: relative;
+    top: -11px;
+    filter: grayscale(100%) brightness(40%) contrast(1);
+    -webkit-transition: opacity 1s ease-out;
+    -moz-transition: opacity 1s ease-out;
+    -o-transition: opacity 1s ease-out;
+    transition: opacity 1s ease-out;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

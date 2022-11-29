@@ -1,0 +1,127 @@
+// Styling for the navbar
+.dnd-nav {
+  background-color: transparent;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  
+  // iPhone
+  @supports (-webkit-overflow-scrolling: touch) {
+    background-color: $dnd-grey !important;
+  }
+  
+  // IE10+
+  @media screen and (-ms-high-contrast: none) {
+    background-color: $dnd-grey !important;
+  }
+  
+  // EDGE
+  @supports (-ms-ime-align:auto) {
+    background-color: $dnd-grey !important;
+  }
+
+  .navbar-toggler {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 300;
+    right: 0;
+    padding: 0;
+    text-transform: uppercase;
+    color: white;
+    border: 0;
+    background-color: transparent !important;
+    @include heading-font;
+
+    &:focus {
+      &, img {
+        outline: 0;
+      }
+    }
+
+    &:hover {
+      opacity: 0.3;
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  .navbar-brand {
+    color: $primary;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
+      color: darken($primary, 10%);
+    }
+    img {
+      height: 3em;
+    }
+  }
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        font-size: 90%;
+        font-weight: 300;
+        padding: 0.75em 0;
+        letter-spacing: 1px;
+        color: white;
+        @include heading-font;
+
+        &.dnd-nav-link-is-active,
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &.dnd-nav-has-background {
+    background-color: $dnd-grey;
+  }
+
+  &.dnd-nav-is-showing {
+    @media (max-width: 992px) {
+      background-color: $dnd-grey;
+    }
+
+    .navbar-toggler img {
+      width: 27px;
+      height: 27px;
+      transform: rotate(45deg);
+    }
+  }
+
+  @media(min-width:992px) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border: none;
+    background-color: transparent;
+    .navbar-brand {
+      font-size: 1.75em;
+    }
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          padding: 1.1em 1em;
+        }
+      }
+    }
+    &.navbar-shrink {
+      padding-top: 0;
+      padding-bottom: 0;
+      background-color:$dnd-grey;
+      .navbar-brand {
+        font-size: 1.25em;
+        padding: 12px 0;
+      }
+    }
+  }
+
+}
