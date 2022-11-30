@@ -1,42 +1,48 @@
 import React from 'react';
 import { Link } from 'react-scroll';
+import PropTypes from 'prop-types';
 
-const Intro = () => {
-  const title = '';
-  const heading = '';
-  const subheading = '';
-  const image = '';
-  return (
-    <header
-        id="intro"
-        className="dnd-intro dnd-branding"
-        // style={{
-        //   backgroundImage: `url(${
-        //     !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        //   })`
-        // }}
-      >
-        <div className="container">
-          <div className="intro-text">
-            <h1 className="intro-lead-in">
-              {title}
-            </h1>
-            <h3 className="intro-heading text-uppercase">
-              {heading}
-            </h3>
-            <Link 
-              className="btn btn-primary btn-xl text-uppercase"
-              duration={350}
-              spy={true}
-              smooth={true}
-              to="services"
-            >
-              {subheading}
-            </Link>
-          </div>
+const Intro = ({ title, heading, subheading, image }) => (
+  <header
+      id="intro"
+      className="dnd-intro dnd-branding"
+      // style={{
+      //   backgroundImage: `url(${
+      //     !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+      //   })`
+      // }}
+    >
+      <div className="container">
+        <div className="intro-text">
+          <h1 className="intro-lead-in">
+            {title}
+          </h1>
+          <h3 className="intro-heading text-uppercase">
+            {heading}
+          </h3>
+          <Link 
+            className="btn btn-primary btn-xl text-uppercase"
+            duration={350}
+            spy={true}
+            smooth={true}
+            to="services"
+          >
+            {subheading}
+          </Link>
         </div>
-      </header>
-  )
-};
+      </div>
+    </header>
+);
 
 export default Intro;
+
+Intro.propTypes = {
+  intro: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      heading: PropTypes.string,
+      subheading: PropTypes.string,
+      image: PropTypes.string,
+    })
+  )
+};
