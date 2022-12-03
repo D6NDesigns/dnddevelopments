@@ -12,7 +12,7 @@ module.exports = {
   plugins: ['gatsby-plugin-sass', "gatsby-plugin-image", {
     resolve: 'gatsby-plugin-manifest',
     options: {
-      "icon": "src/images/icon.svg"
+      "icon": "src/images/logo.svg"
     }
   }, "gatsby-plugin-mdx", "gatsby-transformer-remark", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',

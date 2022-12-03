@@ -1,37 +1,39 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import PropTypes from 'prop-types';
+import { StaticImage } from "gatsby-plugin-image";
 
 const Intro = ({ title, heading, subheading, image }) => (
   <header
-      id="intro"
-      className="dnd-intro dnd-branding"
-      // style={{
-      //   backgroundImage: `url(${
-      //     !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-      //   })`
-      // }}
-    >
-      <div className="container">
-        <div className="intro-text">
-          <h1 className="intro-lead-in">
-            {title}
-          </h1>
-          <h3 className="intro-heading text-uppercase">
-            {heading}
-          </h3>
-          <Link 
-            className="btn btn-primary btn-xl text-uppercase"
-            duration={350}
-            spy={true}
-            smooth={true}
-            to="services"
-          >
-            {subheading}
-          </Link>
-        </div>
+    id="intro"
+    className="dnd-intro dnd-branding"
+    // style={{
+    //   backgroundImage: `url(${
+    //     !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+    //   })`
+    // }}
+  >
+    <StaticImage src={image} alt="" />
+    <div className="container">
+      <div className="intro-text">
+        <h1 className="intro-lead-in">
+          {title}
+        </h1>
+        <h3 className="intro-heading text-uppercase">
+          {heading}
+        </h3>
+        <Link 
+          className="btn btn-primary btn-xl text-uppercase"
+          duration={350}
+          spy={true}
+          smooth={true}
+          to="services"
+        >
+          {subheading}
+        </Link>
       </div>
-    </header>
+    </div>
+  </header>
 );
 
 export default Intro;

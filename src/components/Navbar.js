@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../img/logo.svg';
-import navbarOpenIcon from '../img/icons/navbar-icon.svg';
-import navbarCloseIcon from '../img/icons/plus-icon.svg';
+import logo from '../images/logo.svg';
+import navbarOpenIcon from '../images/icons/navbar-icon.svg';
+import navbarCloseIcon from '../images/icons/plus-icon.svg';
 import { Link } from 'react-scroll';
 import PropTypes from 'prop-types';
 

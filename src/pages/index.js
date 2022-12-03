@@ -6,6 +6,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 const IndexPage = ({ data }) => {
+  console.log(data);
   const { about, contact, intro, portfolio, services, site } = data.markdownRemark.frontmatter;
   return (
     <>
@@ -26,7 +27,7 @@ IndexPage.propTypes = {
 };
 
 export const Head = ({ data }) => {
-  const { description, title, theme, } = data.markdownRemark.frontmatter.site;
+  const { description, title, theme } = data.markdownRemark.frontmatter.site;
   return (
   <>
     <title>D &amp; D Developments | {title}</title>
@@ -35,24 +36,24 @@ export const Head = ({ data }) => {
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/img/apple-touch-icon.png"
+      href="/images/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
-      href="/img/favicon-32x32.png"
+      href="/images/favicon-32x32.png"
       sizes="32x32"
     />
     <link
       rel="icon"
       type="image/png"
-      href="/img/favicon-16x16.png"
+      href="/images/favicon-16x16.png"
       sizes="16x16"
     />
 
     <link
       rel="mask-icon"
-      href="/img/safari-pinned-tab.svg"
+      href="/images/safari-pinned-tab.svg"
       color="#ff4400"
     />
     <meta name="theme-color" content={theme} />
@@ -62,7 +63,7 @@ export const Head = ({ data }) => {
     <meta property="og:type" content="business.business" />
     <meta property="og:title" content={title} />
     <meta property="og:url" content="/" />
-    <meta property="og:image" content="/img/og-image.jpg" />
+    <meta property="og:image" content="/images/og-image.jpg" />
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet" type="text/css" />
@@ -86,6 +87,7 @@ export const pageQuery = graphql`
           title
           heading
           subheading
+          image
         }
         services {
           heading
