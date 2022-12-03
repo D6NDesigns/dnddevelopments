@@ -1,5 +1,11 @@
 ---
 templateKey: index-page
+site:
+  title: D & D Developments
+  description: Midlands Extensions, Renovations, New Builds and Landscaping
+  theme: '#E8B90E'
+  pages: ['Services','Portfolio','About','Contact']
+  services: ['Extensions','Renovations','New Builds','Landscaping']
 intro:
   heading: 'Extensions, Renovations, New Builds and Landscaping'
   image: /img/home-jumbotron.jpg

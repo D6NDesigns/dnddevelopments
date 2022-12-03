@@ -6,19 +6,7 @@ module.exports = {
     title: 'D & D Developments',
     description:
       'Midlands Extensions, Renovations, New Builds and Landscaping',
-    theme: '#E8B90E',
-    pages: [
-      'Services',
-      'Portfolio',
-      'About',
-      'Contact'
-    ],
-    services: [
-      'Extensions',
-      'Renovations',
-      'New Builds',
-      'Landscaping'
-    ],
+    author: 'J Dixon',
     siteUrl: `https://dandddevelopments.uk/`,
   },
   plugins: ['gatsby-plugin-sass', "gatsby-plugin-image", {
