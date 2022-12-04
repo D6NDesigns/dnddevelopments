@@ -87,7 +87,11 @@ export const pageQuery = graphql`
           title
           heading
           subheading
-          image
+          image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
         services {
           heading
