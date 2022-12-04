@@ -2,8 +2,9 @@ import * as React from 'react';
 import Section from '../components/Section';
 import Navbar from '../components/Navbar';
 import Intro from '../components/sections/Intro';
-import About from '../components/sections/About';
 import Services from '../components/sections/Services';
+import Portfolio from '../components/sections/Portfolio';
+import About from '../components/sections/About';
 import '../css/dnddevelopments.scss';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
@@ -16,10 +17,13 @@ const IndexPage = ({ data }) => {
       <Navbar {...site} />
       <Intro {...intro} />
       <Section {...services}>
-        <Services services={services.services} />
+        <Services {...services} />
+      </Section>
+      <Section {...portfolio}>
+        <Portfolio {...portfolio} />
       </Section>
       <Section {...about}>
-        <About team={about.team} />
+        <About {...about} />
       </Section>
     </>
   )
@@ -117,6 +121,13 @@ export const pageQuery = graphql`
           heading
           description
           jobs {
+            images {
+              image {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
             location
             services
           }
