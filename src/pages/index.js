@@ -1,6 +1,8 @@
 import * as React from 'react';
+import Section from '../components/Section';
 import Navbar from '../components/Navbar';
 import Intro from '../components/sections/Intro';
+import Services from '../components/sections/Services';
 import '../css/dnddevelopments.scss';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
@@ -12,6 +14,9 @@ const IndexPage = ({ data }) => {
     <>
       <Navbar {...site} />
       <Intro {...intro} />
+      <Section {...services}>
+        <Services services={services.services} />
+      </Section>
     </>
   )
 }
@@ -30,7 +35,7 @@ export const Head = ({ data }) => {
   const { description, title, theme } = data.markdownRemark.frontmatter.site;
   return (
   <>
-    <title>D &amp; D Developments | {title}</title>
+    <title>D &amp; D Developments | {description}</title>
     <meta name="description" content={description} />
 
     <link

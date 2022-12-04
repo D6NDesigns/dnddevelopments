@@ -8,9 +8,10 @@
   background-size: cover;
   background-color: $dnd-grey;
   min-height: 100vh;
+  overflow: hidden;
 
   .gatsby-image-wrapper {
-    position: fixed;
+    position: absolute;
     top: 0,;
     left: 0;
     min-height: 100vh;

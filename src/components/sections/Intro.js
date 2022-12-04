@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import PropTypes from 'prop-types';
-import { GatsbyImage, getImage, Img } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const Intro = ({ title, heading, subheading, image }) => {
-  console.log('image', image);
   const img = getImage(image);
   return (
     <header
