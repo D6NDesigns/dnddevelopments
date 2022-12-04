@@ -132,12 +132,12 @@ about:
   heading: About
   description: D&D Developments are midlands based high end builders with over 20 years experience, specialising in full property Renovations, Extensions, Repairs and general building work.
   team:
-    - image: /images/about-danny-hayes.jpg
+    - image: ..images/about-danny-hayes.jpg
       info:
         - 12 years experience in the Building Trade
         - NVQ Level 3 Bricklaying
       name: Danny Hayes
-    - image: /images/about-darren-tudgay.jpg
+    - image: ../images/about-darren-tudgay.jpg
       info:
         - 20 years experience in the Building Trade
       name: Darren Tudgay

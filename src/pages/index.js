@@ -104,6 +104,9 @@ export const pageQuery = graphql`
           services {
             heading
             description
+            image {
+              publicURL
+            }
           }
         }
         portfolio {
