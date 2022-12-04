@@ -3,35 +3,38 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Link } from 'react-scroll';
 import PropTypes from 'prop-types';
 
-const Intro = ({ title, heading, subheading, image }) => {
-  const img = getImage(image);
-  return (
-    <header
-      id="intro"
-      className="dnd-intro dnd-branding"
-    >
-      <GatsbyImage image={img} alt='' />
-      <div className="container">
-        <div className="intro-text">
-          <h1 className="intro-lead-in">
-            {title}
-          </h1>
-          <h3 className="intro-heading text-uppercase">
-            {heading}
-          </h3>
-          <Link 
-            className="btn btn-primary btn-xl text-uppercase"
-            duration={350}
-            spy={true}
-            smooth={true}
-            to="services"
-          >
-            {subheading}
-          </Link>
-        </div>
+const Intro = ({ title, heading, subheading, image }) => (
+  <header
+    id="intro"
+    className="dnd-intro dnd-branding"
+  >
+    <GatsbyImage 
+      alt=''
+      backgroundColor="#1B1C1C"
+      image={getImage(image)} 
+      loading="eager"
+    />
+    <div className="container">
+      <div className="intro-text">
+        <h1 className="intro-lead-in">
+          {title}
+        </h1>
+        <h3 className="intro-heading text-uppercase">
+          {heading}
+        </h3>
+        <Link 
+          className="btn btn-primary btn-xl text-uppercase"
+          duration={350}
+          spy={true}
+          smooth={true}
+          to="services"
+        >
+          {subheading}
+        </Link>
       </div>
-  </header>
-)};
+    </div>
+</header>
+);
 
 export default Intro;
 
