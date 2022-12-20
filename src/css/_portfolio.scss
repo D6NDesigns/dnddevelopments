@@ -182,12 +182,21 @@
       text-align: center;
       line-height: 1;
       .dnd-step {
+        outline: none;
+        border: 0;
         display: inline-block;
         width: 16px;
         height: 2px;
         margin: 0 8px;
         background: #fff;
         cursor: pointer;
+        font-size: 0;
+        color: transparent;
+
+        &, & > button {
+          width: 16px;
+          height: 2px;
+        }
 
         &.dnd-step-active {
           background: $primary;

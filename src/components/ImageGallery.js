@@ -8,7 +8,7 @@ const ImageGallery = ({ handleCloseModal, selected }) => {
   const totalImages = selected.images.length - 1;
   return (
     <>
-      <div 
+    <div 
       className="dnd-modal modal fade show"
       id="dnd-portfolio-modal" 
       tabIndex="-1" 
@@ -58,9 +58,9 @@ const ImageGallery = ({ handleCloseModal, selected }) => {
                 >
                   Next
                 </button>
-                <ol className="dnd-stepper">
+                <div className="dnd-stepper">
                   {selected.images.map((image, index) => (
-                    <li
+                    <button
                       aria-current={index === selectedIndex ? 'step' : null}
                       aria-label={`${selected.location} Image ${index + 1}`}
                       className={`dnd-step${index === selectedIndex ? ' dnd-step-active' : ''}`}
@@ -68,9 +68,10 @@ const ImageGallery = ({ handleCloseModal, selected }) => {
                       onClick={() => setSelectedIndex(index)}
                       onKeyDown={() => setSelectedIndex(index)}
                     >
-                    </li>
+                      {`${selected.location} Image ${index + 1}`}
+                    </button>
                   ))}
-                </ol>
+                </div>
               </div>
             </div>
           </div>
