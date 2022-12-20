@@ -120,10 +120,10 @@
         max-width: 70vw;
         max-height: 65vh;
 
-        @media (min-width: 768px) {
-          max-width: calc(100% - 2 * 56px);
-          max-height: calc(100vh - 200px);
-        }
+        // @media (min-width: 768px) {
+        //   max-width: calc(100% - 2 * 56px);
+        //   max-height: calc(100vh - 200px);
+        // }
 
         &.is-selected {
           opacity: 1;
