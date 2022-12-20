@@ -1,34 +1,32 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import '../css/dnddevelopments.scss';
+import '../../css/dnddevelopments.scss';
 
-const NotFoundPage = () => {
-  return (
-    <section id="not-found" className="dnd-thanks dnd-branding dnd-section">
-      <div className="container text-center">
-        <Link to="/" className="dnd-thanks-logo text-hide">
-          Back to homepage  
-        </Link>
-        <h2 className="section-heading text-uppercase">Oops!</h2>
-        <h3 className="section-subheading text-muted">404 - PAGE NOT FOUND.</h3>
-        <p className="text-muted">The page you are looking for might have been removed, had its name changed or is temporarily unavailable.</p>
-        <Link 
-          to="/"
-          className="btn btn-primary text-uppercase"
-        >
-          Back to homepage
-        </Link>
-      </div>
-    </section>
-  )
-}
+const Thanks = () => (
+  <section id="thanks" className="dnd-thanks dnd-branding dnd-section">
+    <div className="container text-center">
+      <Link to="/" className="dnd-thanks-logo text-hide">
+        Back to homepage  
+      </Link>
+      <h2 className="section-heading text-uppercase">Thank you</h2>
+      <h3 className="section-subheading text-muted">Thank you for you contacting D&amp;D Developments.</h3>
+      <p className="text-muted">Your message has been recieved and D&amp;D Developments will contact you shortly via the details you provided.</p>
+      <Link 
+        to="/"
+        className="btn btn-primary text-uppercase"
+      >
+        Back to homepage
+      </Link>
+    </div>
+  </section>
+);
 
-export default NotFoundPage;
+export default Thanks;
 
 export const Head = () => {
   return (
   <>
-    <title>D &amp; D Developments | Not Found</title>
+    <title>D &amp; D Developments | Midlands Extensions, Renovations, New Builds and Landscaping</title>
     <meta name="description" content="Midlands Extensions, Renovations, New Builds and Landscaping" />
 
     <link

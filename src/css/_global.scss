@@ -34,9 +34,13 @@ body {
 
   &.dnd-section {
     padding: 100px 0;
+    background-color: #ffffff;
 
     &:nth-child(even) {
       background-color: #f8f9fa;
+      &.dnd-contact {
+        background-color: transparent;
+      }
     }
 
     h2.section-heading {

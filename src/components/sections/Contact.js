@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { navigate } from 'gatsby-link';
 import PropTypes from 'prop-types';
 import emailIcon from '../../images/icons/email-icon.svg';
@@ -32,173 +32,169 @@ function handleContactIcon(contact) {
   }
 }
 
-export default class Contact extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { 
-      isValidated: false,
-    }
-  }
+const Contact = ({ heading, description, links, image }) => {
+  const [formData, setFormData] = useState({
+    isValidated: false,
+  });
 
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  }
+  const handleChange = e => {
+    setFormData({ [e.target.name]: e.target.value });
+  };
 
-  handleSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault();
+    console.log('handleSubmit', e);
     const form = e.target;
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
         'form-name': form.getAttribute('name'),
-        ...this.state,
+        ...formData,
       }),
     })
       .then(() => navigate(form.getAttribute('action')))
       .catch(error => alert(error))
-  }
+  };
 
-  render() {
-    const { heading, description, links, image } = this.props;
-    console.log('this.props', this.props);
-    return (
-      <>
-        <GatsbyImage 
-          alt=''
-          backgroundColor="#1B1C1C"
-          image={getImage(image)} 
-          loading="eager"
-        />
-        <div className="row justify-content-center">
-          <div className="col-sm-12 col-md-8">
-            <div className="dnd-contact-left d-block col-sm-12">
-              <h2 className="section-heading text-uppercase">{heading}</h2>
-              <h3 className="section-subheading text-muted">{description}</h3>
-              {links && links.map(function(link, index){
-                if (link.type === 'standard'){
-                  return (
-                    <p
-                      className="dnd-contact-link-container text-muted"
-                      key={index}
-                    >
-                      <a
-                        className={`dnd-contact-icon-container dnd-${link.label.toLowerCase()}-icon`}
-                        href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
-                      >
-                        <img 
-                          alt={link.label} 
-                          className="dnd-contact-icon" 
-                          src={handleContactIcon(link.label)} 
-                        /> 
-                      </a>
-                    </p>
-                  );
-                }
+  return (
+    <>
+      <GatsbyImage 
+        alt=''
+        backgroundColor="#1B1C1C"
+        image={getImage(image)} 
+        loading="eager"
+      />
+      <div className="row justify-content-center">
+        <div className="col-sm-12 col-md-8">
+          <div className="dnd-contact-left d-block col-sm-12">
+            <h2 className="section-heading text-uppercase">{heading}</h2>
+            <h3 className="section-subheading text-muted">{description}</h3>
+            {links && links.map(function(link, index){
+              if (link.type === 'standard'){
                 return (
                   <p
                     className="dnd-contact-link-container text-muted"
                     key={index}
                   >
-                    <a 
+                    <a
                       className={`dnd-contact-icon-container dnd-${link.label.toLowerCase()}-icon`}
-                      href={link.address}
-                      key={index} 
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={`${link.label === 'Phone' ? 'tel:' : 'mailto:'}${link.address}`}
                     >
                       <img 
                         alt={link.label} 
                         className="dnd-contact-icon" 
                         src={handleContactIcon(link.label)} 
-                      />
+                      /> 
                     </a>
                   </p>
                 );
               }
-            )}
-            </div>
-            <div className="dnd-contact-right d-block col-sm-12">
-              <h4>Send Message</h4>
-              <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-              >
-                {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                <input type="hidden" name="form-name" value="contact" />
-                <div hidden>
-                  <label>
-                    Don’t fill this out:{' '}
-                    <input 
-                      name="bot-field" 
-                      onChange={this.handleChange} 
-                    />
-                  </label>
-                </div>
-                <div className="form-group">
-                  <label className="label" htmlFor={'name'}>
-                    Your name
-                  </label>
-                  <input
-                    className="form-control"
-                    type={'text'}
-                    name={'name'}
-                    onChange={this.handleChange}
-                    id={'name'}
-                    required={true}
-                  />
-                </div>
-                <div className="form-group">
-                  <label className="label" htmlFor={'email'}>
-                    Your email address
-                  </label>
-                  <input
-                    className="form-control"
-                    type={'email'}
-                    name={'email'}
-                    onChange={this.handleChange}
-                    id={'email'}
-                    required={true}
-                  />
-                </div>
-                <div className="form-group">
-                  <label className="label" htmlFor={'message'}>
-                    Your message
-                  </label>
-                  <textarea
-                    className="form-control"
-                    name={'message'}
-                    onChange={this.handleChange}
-                    id={'message'}
-                    required={true}
-                  />
-                </div>
-                <button className="btn btn-primary text-uppercase" type="submit">
-                  Send Message
-                </button>
-              </form>
-              <div className="row">
-                <div className="dnd-contact-bottom col-sm-12 text-center">
-                  <Link 
-                    duration={350}
-                    spy={true}
-                    smooth={true}
-                    to="intro"
-                    className="dnd-contact-logo text-hide"
+              return (
+                <p
+                  className="dnd-contact-link-container text-muted"
+                  key={index}
+                >
+                  <a 
+                    className={`dnd-contact-icon-container dnd-${link.label.toLowerCase()}-icon`}
+                    href={link.address}
+                    key={index} 
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Back To Top
-                  </Link>
-                </div>
+                    <img 
+                      alt={link.label} 
+                      className="dnd-contact-icon" 
+                      src={handleContactIcon(link.label)} 
+                    />
+                  </a>
+                </p>
+              );
+            }
+          )}
+          </div>
+          <div className="dnd-contact-right d-block col-sm-12">
+            <h4>Send Message</h4>
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+              <input type="hidden" name="form-name" value="contact" />
+              <div hidden>
+                <label>
+                  Don’t fill this out:{' '}
+                  <input 
+                    name="bot-field" 
+                    onChange={handleChange} 
+                  />
+                </label>
+              </div>
+              <div className="form-group">
+                <label className="label" htmlFor={'name'}>
+                  Your name
+                </label>
+                <input
+                  className="form-control"
+                  type={'text'}
+                  name={'name'}
+                  onChange={handleChange}
+                  id={'name'}
+                  required={true}
+                />
+              </div>
+              <div className="form-group">
+                <label className="label" htmlFor={'email'}>
+                  Your email address
+                </label>
+                <input
+                  className="form-control"
+                  type={'email'}
+                  name={'email'}
+                  onChange={handleChange}
+                  id={'email'}
+                  required={true}
+                />
+              </div>
+              <div className="form-group">
+                <label className="label" htmlFor={'message'}>
+                  Your message
+                </label>
+                <textarea
+                  className="form-control"
+                  name={'message'}
+                  onChange={handleChange}
+                  id={'message'}
+                  required={true}
+                />
+              </div>
+              <button className="btn btn-primary text-uppercase" type="submit">
+                Send Message
+              </button>
+            </form>
+            <div className="row">
+              <div className="dnd-contact-bottom col-sm-12 text-center">
+                <Link 
+                  duration={350}
+                  spy={true}
+                  smooth={true}
+                  to="intro"
+                  className="dnd-contact-logo text-hide"
+                >
+                  Back To Top
+                </Link>
               </div>
             </div>
           </div>
         </div>
-      </>
-    )
-  }
+      </div>
+    </>
+  );
 };
+
+export default Contact;
 
 Contact.propTypes = {
   jobs: PropTypes.arrayOf(

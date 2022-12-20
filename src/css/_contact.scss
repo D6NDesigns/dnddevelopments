@@ -1,19 +1,14 @@
 #contact {
-  background-color: $dnd-grey;
   min-height: 100vh;
 
-  // .gatsby-image-wrapper {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   max-height: 100vh;
-  //   min-height: 100vh;
-  //   min-width: 100vw;
-  //   z-index: 0;
-  // }
-  
-  @supports (-webkit-overflow-scrolling: touch) {
-    background-attachment: scroll;
+  .gatsby-image-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    max-height: 100vh;
+    min-height: 100vh;
+    min-width: 100vw;
+    z-index: -1;
   }
 
   @media (max-width: 575px) {

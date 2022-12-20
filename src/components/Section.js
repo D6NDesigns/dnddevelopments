@@ -2,17 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Section = (props) => {
-  const { background, description, heading } = props;
+  const { background, description, heading, image } = props;
   const id = heading ? heading.toLowerCase() : '';
+  console.log('image', image);
   return (
     <section 
       id={id} 
       className={`dnd-${id} dnd-branding dnd-section`}
-      style={{
-        backgroundImage: background ? `url(${
-          !!background.childImageSharp ? background.childImageSharp.fluid.src : background
-        })` : null
-      }}
     >
       <div className="container">
       {id !== 'contact' && (
