@@ -144,7 +144,7 @@ about:
 contact:
   description: Contact D&D.
   heading: Contact
-  background: /images/contact-background.jpg
+  image: ../images/contact-background.jpg
   links:
     - address: 07975 688090
       label: Phone

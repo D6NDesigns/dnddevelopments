@@ -7,11 +7,12 @@ import instagramIcon from '../../images/icons/instagram-icon.svg';
 import phoneIcon from '../../images/icons/phone-icon.svg';
 import twitterIcon from '../../images/icons/twitter-icon.svg';
 import { Link } from 'react-scroll';
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
+    .join('&');
 }
 
 function handleContactIcon(contact) {
@@ -40,7 +41,7 @@ export default class Contact extends React.Component {
   }
 
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value })
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   handleSubmit = e => {
@@ -59,9 +60,16 @@ export default class Contact extends React.Component {
   }
 
   render() {
-    const { heading, description, links } = this.props;
+    const { heading, description, links, image } = this.props;
+    console.log('this.props', this.props);
     return (
       <>
+        <GatsbyImage 
+          alt=''
+          backgroundColor="#1B1C1C"
+          image={getImage(image)} 
+          loading="eager"
+        />
         <div className="row justify-content-center">
           <div className="col-sm-12 col-md-8">
             <div className="dnd-contact-left d-block col-sm-12">

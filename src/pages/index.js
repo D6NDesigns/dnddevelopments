@@ -5,6 +5,7 @@ import Intro from '../components/sections/Intro';
 import Services from '../components/sections/Services';
 import Portfolio from '../components/sections/Portfolio';
 import About from '../components/sections/About';
+import Contact from '../components/sections/Contact';
 import '../css/dnddevelopments.scss';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
@@ -24,6 +25,9 @@ const IndexPage = ({ data }) => {
       </Section>
       <Section {...about}>
         <About {...about} />
+      </Section>
+      <Section {...contact}>
+        <Contact {...contact} />
       </Section>
     </>
   )
@@ -148,7 +152,11 @@ export const pageQuery = graphql`
         contact {
           heading
           description
-          background
+          image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
           links {
             type
             label
