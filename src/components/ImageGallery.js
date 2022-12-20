@@ -34,10 +34,11 @@ const ImageGallery = ({ handleCloseModal, selected }) => {
               <div>
                 <button
                   aria-label="Previous"
+                  className="dnd-modal-button dnd-modal-previous-button"
                   disabled={!selectedIndex}
                   onClick={() => setSelectedIndex(selectedIndex - 1)}
                 >
-                  Prev
+                  Previous
                 </button>
                 {selected.images.map((image, index) => (
                   <GatsbyImage 
@@ -50,11 +51,26 @@ const ImageGallery = ({ handleCloseModal, selected }) => {
                 ))}
                 <button
                   aria-label="Next"
+                  className="dnd-modal-button dnd-modal-next-button"
                   disabled={selectedIndex === totalImages}
                   onClick={() => setSelectedIndex(selectedIndex + 1)}
+                  onKeyDown={() => setSelectedIndex(selectedIndex + 1)}
                 >
                   Next
                 </button>
+                <ol className="dnd-stepper">
+                  {selected.images.map((image, index) => (
+                    <li
+                      aria-current={index === selectedIndex ? 'step' : null}
+                      aria-label={`${selected.location} Image ${index + 1}`}
+                      className={`dnd-step${index === selectedIndex ? ' dnd-step-active' : ''}`}
+                      key={index}
+                      onClick={() => setSelectedIndex(index)}
+                      onKeyDown={() => setSelectedIndex(index)}
+                    >
+                    </li>
+                  ))}
+                </ol>
               </div>
             </div>
           </div>

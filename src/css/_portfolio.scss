@@ -116,6 +116,9 @@
         -webkit-transition: all 0.3s;
         -moz-transition: all 0.3s;
         transition: all 0.3s;
+        margin: 0 auto;
+        max-width: 70vw;
+        max-height: 65vh;
 
         @media (min-width: 768px) {
           max-width: calc(100% - 2 * 56px);
@@ -129,6 +132,67 @@
     }
     button {
       cursor: pointer;
+      &.dnd-modal-button {
+        border: 0;
+        outline: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        font-size: 0;
+        color: transparent;
+        /* vertically center */
+        transform: translateY(-50%);
+        position: absolute;
+        top: 50%;
+        &,&:hover {
+          background-image: url('../images/logo.svg');
+          background-size: 85px 85px;
+          background-position: -20px 1px;
+          background-color: transparent;
+        }
+        &.dnd-modal-previous-button {
+          -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+          left: 0;
+          @media (min-width: 768px) {
+            left: 25vw;
+          }
+        }
+        &.dnd-modal-next-button {
+          -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+          right: 0;
+          @media (min-width: 768px) {
+            right: 25vw;
+          }
+        }
+        &[disabled] {
+          opacity: .3;
+          cursor: auto;
+          pointer-events: none;
+        }
+      }
+    }
+    .dnd-stepper {
+      width: 100%;
+      bottom: -25px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-align: center;
+      line-height: 1;
+      .dnd-step {
+        display: inline-block;
+        width: 16px;
+        height: 2px;
+        margin: 0 8px;
+        background: #fff;
+        cursor: pointer;
+
+        &.dnd-step-active {
+          background: $primary;
+        }
+      }
     }
   }
   .close-modal {
